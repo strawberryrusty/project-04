@@ -12,6 +12,8 @@ class ItemSerializer(serializers.ModelSerializer):
 
 class ProgrammeSerializer(serializers.ModelSerializer):
 
+    user = UserSerializer(read_only=True)# changes user id to username, email
+
     class Meta:
         model = Programme
         fields = ('id', 'name', 'items', 'user',)
