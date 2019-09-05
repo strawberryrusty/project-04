@@ -7,7 +7,7 @@ from .permissions import IsOwnerOrReadOnly
 
 
 from .models import Item, Programme
-from .serializers import ItemSerializer, ProgrammeSerializer
+from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer
 
 # Create your views here.
 
@@ -79,7 +79,7 @@ class ProgrammeListView(APIView):
 
     def get(self, _request):
         programmes = Programme.objects.all() # get all the items
-        serializer = ProgrammeSerializer(programmes, many=True)
+        serializer = PopulatedProgrammeSerializer(programmes, many=True)
         return Response(serializer.data) # send the JSON to the client
 
 
@@ -109,7 +109,7 @@ class ProgrammeDetailView(APIView):
 
     def get(self, _request, pk):
         programme = self.get_movie(pk) # get a item by id (pk means primary key)
-        serializer = ProgrammeSerializer(programme)
+        serializer = PopulatedProgrammeSerializer(programme)
 
         # pass the item to the template file
         return Response(serializer.data) # send the JSON to the client
