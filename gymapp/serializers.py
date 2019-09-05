@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from jwt_auth.serializers import UserSerializer
-from .models import Programme, Item, Exercise
+from .models import Programme, Item, Exercise, Category
 
 
 
@@ -23,8 +23,13 @@ class ExerciseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Exercise
-        fields = ('id', 'name', 'sets', 'reps',)
+        fields = ('id', 'name', 'sets', 'reps', 'categories')
 
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = ('id', 'name', 'exercises',)
 
 class PopulatedItemSerializer(ItemSerializer):
 
@@ -34,6 +39,14 @@ class PopulatedItemSerializer(ItemSerializer):
 class PopulatedProgrammeSerializer(ProgrammeSerializer):
 
     items = PopulatedItemSerializer(many=True)
+
+class PopulatedCategorySerializer(CategorySerializer):
+
+    exercises = ExerciseSerializer(many=True)
+
+
+
+
 
 # class ItemSerializer(serializers.ModelSerializer):
 #     exercises = ExerciseSerializer(many=True)

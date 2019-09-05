@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import ProgrammeListView, ProgrammeDetailView, ItemListView, ItemDetailView
+from .views import ProgrammeListView, ProgrammeDetailView, ItemListView, ItemDetailView, CategoryListView, CategoryDetailView
 
 
 urlpatterns = [
+    path('categories/', CategoryListView.as_view(), name='categories-list'),
+    path('categories/<int:pk>/', CategoryDetailView.as_view(), name='categories-list'),
     path('exercises/', ProgrammeListView.as_view(), name='exercises-list'),
     path('exercises/<int:pk>/', ProgrammeDetailView.as_view(), name='exercises-list'),
     path('items/', ItemListView.as_view(), name='items-list'),

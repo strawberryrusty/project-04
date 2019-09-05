@@ -6,8 +6,8 @@ from .permissions import IsOwnerOrReadOnly
 
 
 
-from .models import Item, Programme
-from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer
+from .models import Item, Programme, Category
+from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer, CategorySerializer, PopulatedCategorySerializer
 
 # Create your views here.
 
@@ -36,7 +36,7 @@ class ItemDetailView(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
 
-    def get_movie(self, pk):
+    def get_item(self, pk):
         try:
             item = Item.objects.get(pk=pk)
         except Item.DoesNotExist:
@@ -45,7 +45,7 @@ class ItemDetailView(APIView):
         return item
 
     def get(self, _request, pk):
-        item = self.get_movie(pk) # get a item by id (pk means primary key)
+        item = self.get_item(pk) # get a item by id (pk means primary key)
         serializer = ItemSerializer(item)
 
         # pass the item to the template file
@@ -63,7 +63,7 @@ class ItemDetailView(APIView):
 
 # To DELETE
     def delete(self, _request, pk):
-        item = self.get_movie(pk)
+        item = self.get_item(pk)
         item.delete()
 
         return Response(status=204)
@@ -98,7 +98,7 @@ class ProgrammeDetailView(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
 
-    def get_movie(self, pk):
+    def get_item(self, pk):
         try:
             programme = Programme.objects.get(pk=pk)
         except Programme.DoesNotExist:
@@ -108,7 +108,7 @@ class ProgrammeDetailView(APIView):
 
 
     def get(self, _request, pk):
-        programme = self.get_movie(pk) # get a item by id (pk means primary key)
+        programme = self.get_item(pk) # get a item by id (pk means primary key)
         serializer = PopulatedProgrammeSerializer(programme)
 
         # pass the item to the template file
@@ -116,7 +116,7 @@ class ProgrammeDetailView(APIView):
 
     # To EDIT
     def put(self, request, pk):
-        programme = self.get_movie(pk)
+        programme = self.get_item(pk)
         serializer = ItemSerializer(programme, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -126,7 +126,70 @@ class ProgrammeDetailView(APIView):
 
 # To DELETE
     def delete(self, _request, pk):
-        programme = self.get_movie(pk)
+        programme = self.get_item(pk)
         programme.delete()
+
+        return Response(status=204)
+
+
+
+
+
+class CategoryListView(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+
+    def get(self, _request):
+        categories = Category.objects.all() # get all the items
+        serializer = PopulatedCategorySerializer(categories, many=True)
+        return Response(serializer.data) # send the JSON to the client
+
+
+    # handle to CREATE
+    def post(self, request):
+        serializer = CategorySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
+
+
+
+class CategoryDetailView(APIView):
+
+
+
+    def get_item(self, pk):
+        try:
+            category = Category.objects.get(pk=pk)
+        except Category.DoesNotExist:
+            raise Http404
+
+        return category
+
+
+    def get(self, _request, pk):
+        category = self.get_item(pk) # get a item by id (pk means primary key)
+        serializer = PopulatedCategorySerializer(category)
+
+        # pass the item to the template file
+        return Response(serializer.data) # send the JSON to the client
+
+    # To EDIT
+    def put(self, request, pk):
+        category = self.get_item(pk)
+        serializer = ItemSerializer(category, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=422)
+
+# To DELETE
+    def delete(self, _request, pk):
+        category = self.get_item(pk)
+        category.delete()
 
         return Response(status=204)
