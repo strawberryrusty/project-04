@@ -53,7 +53,7 @@ class ItemDetailView(APIView):
 
     # To EDIT
     def put(self, request, pk):
-        item = self.get_movie(pk)
+        item = self.get_item(pk)
         serializer = ItemSerializer(item, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -76,7 +76,6 @@ class ProgrammeListView(APIView):
 
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
-
     def get(self, _request):
         programmes = Programme.objects.all() # get all the items
         serializer = PopulatedProgrammeSerializer(programmes, many=True)
@@ -95,10 +94,9 @@ class ProgrammeListView(APIView):
 
 
 class ProgrammeDetailView(APIView):
-
     permission_classes = (IsOwnerOrReadOnly,)
 
-    def get_item(self, pk):
+    def get_programme(self, pk):
         try:
             programme = Programme.objects.get(pk=pk)
         except Programme.DoesNotExist:
@@ -108,7 +106,7 @@ class ProgrammeDetailView(APIView):
 
 
     def get(self, _request, pk):
-        programme = self.get_item(pk) # get a item by id (pk means primary key)
+        programme = self.get_programme(pk) # get a item by id (pk means primary key)
         serializer = PopulatedProgrammeSerializer(programme)
 
         # pass the item to the template file
@@ -116,8 +114,8 @@ class ProgrammeDetailView(APIView):
 
     # To EDIT
     def put(self, request, pk):
-        programme = self.get_item(pk)
-        serializer = ItemSerializer(programme, data=request.data)
+        programme = self.get_programme(pk)
+        serializer = ProgrammeSerializer(programme, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -126,7 +124,7 @@ class ProgrammeDetailView(APIView):
 
 # To DELETE
     def delete(self, _request, pk):
-        programme = self.get_item(pk)
+        programme = self.get_programme(pk)
         programme.delete()
 
         return Response(status=204)
@@ -136,9 +134,6 @@ class ProgrammeDetailView(APIView):
 
 
 class CategoryListView(APIView):
-
-    permission_classes = (IsAuthenticatedOrReadOnly,)
-
 
     def get(self, _request):
         categories = Category.objects.all() # get all the items
@@ -159,9 +154,7 @@ class CategoryListView(APIView):
 
 class CategoryDetailView(APIView):
 
-
-
-    def get_item(self, pk):
+    def get_category(self, pk):
         try:
             category = Category.objects.get(pk=pk)
         except Category.DoesNotExist:
@@ -171,7 +164,7 @@ class CategoryDetailView(APIView):
 
 
     def get(self, _request, pk):
-        category = self.get_item(pk) # get a item by id (pk means primary key)
+        category = self.get_category(pk) # get a item by id (pk means primary key)
         serializer = PopulatedCategorySerializer(category)
 
         # pass the item to the template file
@@ -179,8 +172,8 @@ class CategoryDetailView(APIView):
 
     # To EDIT
     def put(self, request, pk):
-        category = self.get_item(pk)
-        serializer = ItemSerializer(category, data=request.data)
+        category = self.get_category(pk)
+        serializer = CategorySerializer(category, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -189,7 +182,7 @@ class CategoryDetailView(APIView):
 
 # To DELETE
     def delete(self, _request, pk):
-        category = self.get_item(pk)
+        category = self.get_category(pk)
         category.delete()
 
         return Response(status=204)

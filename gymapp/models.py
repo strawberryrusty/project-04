@@ -36,3 +36,13 @@ class Item(models.Model):
 
     def __str__(self):
         return f'{self.day}'
+
+
+class PersonalBest(models.Model):
+    date = models.DateField()
+    weigth = models.IntegerField()
+    items = models.ManyToManyField(Item, related_name='personalbest', blank=True)
+
+
+    def __str__(self):
+        return f'{self.date} - {self.weigth}'
