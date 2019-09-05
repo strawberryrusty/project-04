@@ -3,8 +3,8 @@ from .views import ProgrammeListView, ProgrammeDetailView, ItemListView, ItemDet
 
 
 urlpatterns = [
-    path('programmes/', ProgrammeListView.as_view()),
-    path('programmes/<int:pk>/', ProgrammeDetailView.as_view()),
-    path('items/', ItemListView.as_view()),
-    path('items/<int:pk>/', ItemDetailView.as_view()),
+    path('programmes/', ProgrammeListView.as_view(), name='programmes-list'),
+    path('programmes/<int:pk>/', ProgrammeDetailView.as_view(), name='programmes-list'),
+    path('items/', ItemListView.as_view(), name='items-list'),
+    path('items/<int:pk>/', ItemDetailView.as_view(), name='items-list'),
 ]

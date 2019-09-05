@@ -14,7 +14,7 @@
   "fields": {
     "day": "Monday",
     "sets": 3,
-    "reps": 4,
+    "reps": 3,
     "programme": 1
   }
 },
@@ -23,7 +23,7 @@
   "pk": 2,
   "fields": {
     "day": "Tuesday",
-    "sets": 5,
+    "sets": 3,
     "reps": 4,
     "programme": 1
   }

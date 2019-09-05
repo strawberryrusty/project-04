@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -15,6 +16,7 @@ class Item(models.Model):
     sets = models.IntegerField()
     reps = models.IntegerField()
     programme = models.ForeignKey(Programme, related_name='items', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='albums', on_delete=models.CASCADE)
 
 
     def __str__(self):
