@@ -1,0 +1,31 @@
+[
+{
+  "model": "gymapp.programme",
+  "pk": 1,
+  "fields": {
+    "firstname": "Chest",
+    "middlename": "",
+    "lastname": "Expansion"
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 1,
+  "fields": {
+    "day": "Monday",
+    "sets": 3,
+    "reps": 4,
+    "programme": 1
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 2,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 5,
+    "reps": 4,
+    "programme": 1
+  }
+}
+]
