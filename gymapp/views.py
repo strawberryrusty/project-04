@@ -32,41 +32,40 @@ class ItemListView(APIView):
 
 
 
-class ItemDetailView(APIView):
-
-    
-
-    def get_item(self, pk):
-        try:
-            item = Item.objects.get(pk=pk)
-        except Item.DoesNotExist:
-            raise Http404
-
-        return item
-
-    def get(self, _request, pk):
-        item = self.get_item(pk) # get a item by id (pk means primary key)
-        serializer = ItemSerializer(item)
-
-        # pass the item to the template file
-        return Response(serializer.data) # send the JSON to the client
-
-    # To EDIT
-    def put(self, request, pk):
-        item = self.get_item(pk)
-        serializer = ItemSerializer(item, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-
-        return Response(serializer.errors, status=422)
-
-# To DELETE
-    def delete(self, _request, pk):
-        item = self.get_item(pk)
-        item.delete()
-
-        return Response(status=204)
+# class ItemDetailView(APIView):
+#
+#
+#     def get_item(self, pk):
+#         try:
+#             item = Item.objects.get(pk=pk)
+#         except Item.DoesNotExist:
+#             raise Http404
+#
+#         return item
+#
+#     def get(self, _request, pk):
+#         item = self.get_item(pk) # get a item by id (pk means primary key)
+#         serializer = ItemSerializer(item)
+#
+#         # pass the item to the template file
+#         return Response(serializer.data) # send the JSON to the client
+#
+#     # To EDIT
+#     def put(self, request, pk):
+#         item = self.get_item(pk)
+#         serializer = ItemSerializer(item, data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#
+#         return Response(serializer.errors, status=422)
+#
+# # To DELETE
+#     def delete(self, _request, pk):
+#         item = self.get_item(pk)
+#         item.delete()
+#
+#         return Response(status=204)
 
 
 
@@ -130,7 +129,25 @@ class ProgrammeDetailView(APIView):
         return Response(status=204)
 
 
+# /api/programmes/:id/items
+class ProgrammeItemListView(APIView):
 
+    def get_programme(self, pk):
+        try:
+            programme = Programme.objects.get(pk=pk)
+        except Programme.DoesNotExist:
+            raise Http404
+
+        return programme
+
+    def post(self, request, pk):
+        programme = self.get_programme(pk)
+        serializer = ItemSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(programme=programme)# if a user adds a album
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
 
 
 class CategoryListView(APIView):

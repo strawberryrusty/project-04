@@ -2,14 +2,6 @@ from rest_framework import serializers
 from jwt_auth.serializers import UserSerializer
 from .models import Programme, Item, Exercise, Category
 
-
-
-class ItemSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Item
-        fields = ('id', 'day', 'exercise', 'personalbest', 'sets', 'reps',)
-
 class ProgrammeSerializer(serializers.ModelSerializer):
 
     user = UserSerializer(read_only=True)# changes user id to username, email
@@ -17,6 +9,13 @@ class ProgrammeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Programme
         fields = ('id', 'name', 'items', 'user',)
+
+
+class ItemSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Item
+        fields = ('id', 'day', 'exercise', 'personalbest', 'sets', 'reps',)
 
 
 class ExerciseSerializer(serializers.ModelSerializer):
