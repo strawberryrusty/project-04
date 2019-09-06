@@ -14,5 +14,5 @@ urlpatterns = [
     path('programmes/', ProgrammeListView.as_view(), name='programmes-list'),
     path('programmes/<int:pk>/', ProgrammeDetailView.as_view(), name='programmes-list'),
     path('programmes/<int:pk>/items/', ProgrammeItemListView.as_view(), name='programmes-items-list'),
-    path('programmes/<int:_pk>/items/<int:pk>', ProgrammeItemDetailView.as_view(), name='programmes-items-detail')
+    path('programmes/<int:programme_pk>/items/<int:pk>', ProgrammeItemDetailView.as_view(), name='programmes-items-detail')
 ]

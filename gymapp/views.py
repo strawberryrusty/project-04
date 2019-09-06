@@ -155,19 +155,19 @@ class ProgrammeItemListView(APIView):
 # /api/programmes/:id/items/:id
 class ProgrammeItemDetailView(APIView):
 
-    def get_programme(self, pk):
+    def get_item(self, pk):
         try:
-            programme = Programme.objects.get(pk=pk)
-        except Programme.DoesNotExist:
+            item = Item.objects.get(pk=pk)
+        except Item.DoesNotExist:
             raise Http404
 
-        return programme
+        return item
 
-    def put(self, request, pk):
-        programme = self.get_programme(pk)
-        serializer = ItemSerializer(data=request.data)
+    def put(self, request, **kwargs):
+        item = self.get_item(kwargs['pk'])
+        serializer = ItemSerializer(item, data=request.data)
         if serializer.is_valid():
-            serializer.save(programme=programme)# this attaches a particular item to a particuar programme
+            serializer.save()# this attaches a particular item to a particuar programme
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
