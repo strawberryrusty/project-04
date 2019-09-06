@@ -34,7 +34,7 @@ class ItemListView(APIView):
 
 class ItemDetailView(APIView):
 
-    permission_classes = (IsOwnerOrReadOnly,)
+    
 
     def get_item(self, pk):
         try:

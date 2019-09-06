@@ -12,18 +12,17 @@ class Category(models.Model):
 
 class Exercise(models.Model):
     name = models.CharField(max_length=50)
-    sets = models.IntegerField()
-    reps = models.IntegerField()
+    description = models.TextField()
+    image = models.CharField(max_length=500)
     categories = models.ManyToManyField(Category, related_name='exercises', blank=True)
 
     def __str__(self):
-        return f'{self.name} {self.sets} {self.reps} '
+        return f'{self.name}'
 
 
 class Programme(models.Model):
     name = models.CharField(max_length=20)
     user = models.ForeignKey(User, related_name='programmes', on_delete=models.CASCADE)
-
 
     def __str__(self):
         return f'{self.name} - {self.user}'
@@ -31,18 +30,11 @@ class Programme(models.Model):
 
 class Item(models.Model):
     day = models.CharField(max_length=20)
-    exercises = models.ManyToManyField(Exercise, related_name='items', blank=True)
+    sets = models.IntegerField()
+    reps = models.IntegerField()
+    personalbest = models.IntegerField()
     programme = models.ForeignKey(Programme, related_name='items', on_delete=models.CASCADE)
+    exercise = models.ForeignKey(Exercise, related_name='items', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.day}'
-
-
-class PersonalBest(models.Model):
-    date = models.DateField()
-    weigth = models.IntegerField()
-    items = models.ManyToManyField(Item, related_name='personalbest', blank=True)
-
-
-    def __str__(self):
-        return f'{self.date} - {self.weigth}'
