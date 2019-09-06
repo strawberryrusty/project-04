@@ -140,14 +140,46 @@ class ProgrammeItemListView(APIView):
 
         return programme
 
+
     def post(self, request, pk):
         programme = self.get_programme(pk)
         serializer = ItemSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(programme=programme)# if a user adds a album
+            serializer.save(programme=programme)# this attaches items to a particular programme
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
+
+
+
+# /api/programmes/:id/items/:id
+class ProgrammeItemDetailView(APIView):
+
+    def get_programme(self, pk):
+        try:
+            programme = Programme.objects.get(pk=pk)
+        except Programme.DoesNotExist:
+            raise Http404
+
+        return programme
+
+    def put(self, request, pk):
+        programme = self.get_programme(pk)
+        serializer = ItemSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(programme=programme)# this attaches a particular item to a particuar programme
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
+
+
+    def delete(self, _request, pk):
+        item = self.get_item(pk)
+        item.delete()
+
+        return Response(status=204)
+
+
 
 
 class CategoryListView(APIView):

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProgrammeListView, ProgrammeDetailView, CategoryListView, CategoryDetailView, ProgrammeItemListView
+from .views import ProgrammeListView, ProgrammeDetailView, CategoryListView, CategoryDetailView, ProgrammeItemListView, ProgrammeItemDetailView
 
 
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     # path('items/<int:pk>/', ItemDetailView.as_view(), name='items-list'),
     path('programmes/', ProgrammeListView.as_view(), name='programmes-list'),
     path('programmes/<int:pk>/', ProgrammeDetailView.as_view(), name='programmes-list'),
-    path('programmes/<int:pk>/items/', ProgrammeItemListView.as_view(), name='programmes-items-list')
+    path('programmes/<int:pk>/items/', ProgrammeItemListView.as_view(), name='programmes-items-list'),
+    path('programmes/<int:_pk>/items/<int:pk>', ProgrammeItemDetailView.as_view(), name='programmes-items-detail')
 ]
