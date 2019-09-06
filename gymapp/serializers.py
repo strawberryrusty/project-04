@@ -4,11 +4,9 @@ from .models import Programme, Item, Exercise, Category
 
 class ProgrammeSerializer(serializers.ModelSerializer):
 
-    user = UserSerializer(read_only=True)# changes user id to username, email
-
     class Meta:
         model = Programme
-        fields = ('id', 'name', 'items', 'user',)
+        fields = ('id', 'name',)
 
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -40,6 +38,9 @@ class PopulatedItemSerializer(ItemSerializer):
 class PopulatedProgrammeSerializer(ProgrammeSerializer):
 
     items = PopulatedItemSerializer(many=True)
+
+    class Meta(ProgrammeSerializer.Meta):
+        fields = ('id', 'name', 'items',)
 
 class PopulatedCategorySerializer(CategorySerializer):
 

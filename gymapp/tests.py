@@ -8,13 +8,9 @@ class GymappTest(APITestCase):
 
     def setUp(self):
         user = User.objects.create(username='test', email='test@test.com', password='test')
-        category = Category.objects.create(name='Arm')
-        exercise = Exercise.objects.create(name='Bench Press', descriptions='Do the Bench Press', image='https://thumbs.gfycat.com/TastyAcceptableArgentinehornedfrog-size_restricted.gif', category=category)
-        item = Item.objects.create(day='Monday', exercise=exercise, sets='5', resp='6', personalbest='60', programme='Summer')
-        programme = Programme.objects.create(name='Summer', user='user')
-        exercise.category.set([category])
+        Programme.objects.create(name='Summer', user=user)
 
-        # self.client.force_authenticate(user=user)
+        self.client.force_authenticate(user=user)
 
     def test_programmes_index(self):
         """""
@@ -27,16 +23,25 @@ class GymappTest(APITestCase):
         self.assertEqual(response.status_code, 200)
         self.assertJSONEqual(response.content, [{
             'id': 1,
-            'title': 'The Hobbit',
-            'image': 'http://i.imgur.com/1KLiyRc',
-            'author': {
-                'id': 1,
-                'firstname': 'J',
-                'middlename': 'R R',
-                'lastname': 'Tolkien'
-            },
-            'genres': [{
-                'id': 1,
-                'name': 'Fantasy'
-            }]
+            'name': 'Summer',
+            'items': []
         }])
+
+    def test_programmes_create(self):
+        """""
+        should create a programme
+        """""
+
+        url = reverse('programmes-list')
+        data = {
+            'name': 'Winter'
+        }
+        response = self.client.post(url, data)
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Programme.objects.count(), 2)
+        self.assertJSONEqual(response.content, {
+            "id": 2,
+            "name": "Winter",
+            "items": []
+        })

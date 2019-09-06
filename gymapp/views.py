@@ -86,6 +86,8 @@ class ProgrammeListView(APIView):
         serializer = ProgrammeSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
+            programme = serializer.instance
+            serializer = PopulatedProgrammeSerializer(programme)
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
