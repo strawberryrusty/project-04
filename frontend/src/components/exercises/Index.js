@@ -11,7 +11,7 @@ class ExercisesIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/programme/exercises')
+    axios.get('/api/exercises')
       .then(res => this.setState({ exercises: res.data }))
   }
 
@@ -25,8 +25,8 @@ class ExercisesIndex extends React.Component {
             {!this.state.exercises && <h2 className="title is-2">Loading...</h2>}
 
             {this.state.exercises && this.state.exercises.map(exercise =>
-              <div className="column is-one-quarter-desktop" key={exercise._id}>
-                <Link to={`/exercises/${exercise._id}`}>
+              <div className="column is-one-quarter-desktop" key={exercise.id}>
+                <Link to={`/exercises/${exercise.id}`}>
                   <div className="card">
                     <div className="card-header">
                       <h2 className="card-header-title">{exercise.name}</h2>

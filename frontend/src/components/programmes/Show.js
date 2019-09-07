@@ -14,7 +14,7 @@ class ProgrammesShow extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`/api/programmes/${this.props.match.params.id}`)
+    axios.get(`/api/programmes/${this.props.match.params.id}/`)
       .then(res => this.setState({programme: res.data}))
   }
 
