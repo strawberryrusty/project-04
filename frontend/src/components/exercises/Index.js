@@ -1,5 +1,15 @@
 import React from 'react'
 import axios from 'axios'
+import Select from 'react-select'
+
+const options = [
+  { value: 'Legs', label: 'Legs' },
+  { value: 'Core', label: 'Core' },
+  { value: 'Arms', label: 'Arms' },
+  { value: 'Shoulders', label: 'Shoulders' },
+  { value: 'Chest', label: 'Chest' }
+]
+
 
 import { Link } from 'react-router-dom'
 
@@ -7,7 +17,15 @@ class ExercisesIndex extends React.Component {
 
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      selectedOption: null
+    }
+  }
+
+
+  handleChange(selectedOption) {
+    this.setState({ selectedOption })
+    console.log('Option selected:', selectedOption)
   }
 
   componentDidMount() {
@@ -17,9 +35,16 @@ class ExercisesIndex extends React.Component {
 
   render() {
     // console.log(this.state.excercises)
+    const { selectedOption } = this.state
     return (
+
       <section className="section">
         <div className="container">
+          <Select
+            value={selectedOption}
+            onChange={this.handleChange}
+            options={options}
+          />
           <div className="columns is-multiline">
 
             {!this.state.exercises && <h2 className="title is-2">Loading...</h2>}
