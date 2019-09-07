@@ -1,20 +1,34 @@
 import React from 'react'
-import ReactDom from 'react-dom'
-import axios from 'axios'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
+import Home from './components/pages/Home'
+import About from './components/pages/About'
 
 class App extends React.Component {
-  componentDidMount(){
-    axios.get('/api/gymapp/')
-      .then(res => console.log(res.data))
-  }
-  render(){
+
+  render() {
     return (
-      <h1> Hello Gymapp</h1>
+      <BrowserRouter>
+        <div>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+          </nav>
+
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+        </div>
+      </BrowserRouter>
     )
   }
 }
-ReactDom.render(
+
+
+
+
+
+ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
