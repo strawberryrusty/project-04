@@ -16,7 +16,7 @@ class ExercisesIndex extends React.Component {
   }
 
   render() {
-    console.log(this.state.excercises)
+    // console.log(this.state.excercises)
     return (
       <section className="section">
         <div className="container">

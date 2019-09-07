@@ -7,6 +7,7 @@ import About from './components/pages/About'
 import ProgrammesIndex from './components/programmes/Index'
 import ProgrammesShow from './components/programmes/Show'
 import ExercisesIndex from './components/exercises/Index'
+import ExercisesShow from './components/exercises/Show'
 
 
 
@@ -21,7 +22,7 @@ class App extends React.Component {
         <HashRouter>
 
           <Switch>
-            <Route path="/exercises/:id" component={ProgrammesShow}/>
+            <Route path="/exercises/:id" component={ExercisesShow}/>
             <Route path="/exercises" component={ExercisesIndex} />
             <Route path="/programmes/:id" component={ProgrammesShow}/>
             <Route path="/programmes" component={ProgrammesIndex} />

@@ -25,7 +25,12 @@ class ProgrammesShow extends React.Component {
         <div className="container">
           <div className="column is-half-tablet">
             <h1 className="title is-2">{this.state.programme.name}</h1>
-            <h2 className="subtitle is-4">{this.state.programme.items}</h2>
+            <h2 className="subtitle is-4">{this.state.programme.map(item => item)}</h2>
+            <h2 className="subtitle is-4">{this.state.programme.items.day}</h2>
+            <h2 className="subtitle is-4">{this.state.programme.items.sets}</h2>
+            <h2 className="subtitle is-4">{this.state.programme.items.reps}</h2>
+            <h2 className="subtitle is-4">{this.state.programme.items.personalbest}</h2>
+            <h2 className="subtitle is-4">{this.state.programme.items.exercise}</h2>
           </div>
         </div>
       </section>
