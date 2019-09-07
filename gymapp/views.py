@@ -6,8 +6,8 @@ from .permissions import IsOwnerOrReadOnly
 
 
 
-from .models import Item, Programme, Category
-from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer, CategorySerializer, PopulatedCategorySerializer
+from .models import Item, Programme, Category, Exercise
+from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer, CategorySerializer, PopulatedCategorySerializer, ExerciseSerializer
 
 # Create your views here.
 
@@ -235,5 +235,62 @@ class CategoryDetailView(APIView):
     def delete(self, _request, pk):
         category = self.get_category(pk)
         category.delete()
+
+        return Response(status=204)
+
+
+
+
+class ExerciseListView(APIView):
+
+    def get(self, _request):
+        exercises = Exercise.objects.all() # get all the items
+        serializer = ExerciseSerializer(exercises, many=True)
+        return Response(serializer.data) # send the JSON to the client
+
+
+    # handle to CREATE
+    def post(self, request):
+        serializer = ExerciseSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
+
+
+
+class ExerciseDetailView(APIView):
+
+    def get_exercise(self, pk):
+        try:
+            exercise = Exercise.objects.get(pk=pk)
+        except Exercise.DoesNotExist:
+            raise Http404
+
+        return exercise
+
+
+    def get(self, _request, pk):
+        exercise = self.get_exercise(pk) # get a item by id (pk means primary key)
+        serializer = ExerciseSerializer(exercise)
+
+        # pass the item to the template file
+        return Response(serializer.data) # send the JSON to the client
+
+    # To EDIT
+    def put(self, request, pk):
+        exercise = self.get_exercise(pk)
+        serializer = ExerciseSerializer(exercise, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=422)
+
+# To DELETE
+    def delete(self, _request, pk):
+        exercise = self.get_exercise(pk)
+        exercise.delete()
 
         return Response(status=204)
