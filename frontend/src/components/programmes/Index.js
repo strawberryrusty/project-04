@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import { Link } from 'react-router-dom'
 
-class Index extends React.Component {
+class ProgrammesIndex extends React.Component {
 
   constructor() {
     super()
@@ -16,7 +16,7 @@ class Index extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.programmes)
     return (
       <section className="section">
         <div className="container">
@@ -43,4 +43,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default ProgrammesIndex

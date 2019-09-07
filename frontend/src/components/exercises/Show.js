@@ -4,7 +4,7 @@ import axios from 'axios'
 // import Auth from '../../lib/Auth'
 
 
-class ExercisessShow extends React.Component {
+class ExercisesShow extends React.Component {
   constructor(){
     super()
     this.state = {
@@ -19,7 +19,6 @@ class ExercisessShow extends React.Component {
 
 
   render(){
-    console.log(this.state.exarray)
     if(!this.state.exercise) return null
     return (
       <section className="section">
@@ -37,4 +36,4 @@ class ExercisessShow extends React.Component {
   }
 }
 
-export default ExercisessShow
+export default ExercisesShow

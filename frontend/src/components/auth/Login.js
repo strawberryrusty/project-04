@@ -28,7 +28,7 @@ class Login extends React.Component {
       .then(res => {
         Auth.setUser(res.data.user)
         Auth.setToken(res.data.token) // store the token in localStorage
-        this.props.history.push('/programmes') // redirect to the cheeses INDEX page
+        this.props.history.push('/register') // redirect to the cheeses INDEX page
       })
       .catch(() => {
         Auth.removeToken() // remove the token from localStorage
