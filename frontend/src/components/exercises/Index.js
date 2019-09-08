@@ -55,6 +55,9 @@ class ExercisesIndex extends React.Component {
                   <div className="card">
                     <div className="card-header">
                       <h2 className="card-header-title">{exercise.name}</h2>
+                      <div className="card-content">
+                        <img className="Image" src={exercise.image} alt={exercise.name}/>
+                      </div>
                     </div>
                   </div>
                 </Link>
