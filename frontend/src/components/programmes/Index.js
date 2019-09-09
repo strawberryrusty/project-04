@@ -7,13 +7,19 @@ class ProgrammesIndex extends Component {
 
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+
+    }
+
   }
 
   componentDidMount() {
     axios.get('/api/programmes/')
       .then(res => this.setState({ programmes: res.data }))
   }
+
+
+
 
   render() {
     console.log(this.state.programmes)
@@ -29,7 +35,7 @@ class ProgrammesIndex extends Component {
                 <Link to={`/programmes/${programme.id}`}>
                   <div className="card">
                     <div className="card-header">
-                      <h2 className="card-header-title">{programme.name}<button className="button">Delete</button></h2>
+                      <h2 className="card-header-title">{programme.name}</h2>
                     </div>
                   </div>
                 </Link>

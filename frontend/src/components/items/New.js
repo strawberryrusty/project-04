@@ -34,12 +34,10 @@ class ItemsNew extends React.Component {
       errors: {}
 
     }
-
     this.handleChange = this.handleChange.bind(this)
     this.handleDayChange = this.handleDayChange.bind(this)
     this.handleExerciseChange = this.handleExerciseChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
   }
 
   handleSubmit(e) {
@@ -108,7 +106,9 @@ class ItemsNew extends React.Component {
                 <label className="label">Sets</label>
                 <input
                   className="input"
+                  type="number"
                   name="sets"
+                  min="0"
                   placeholder="eg:25"
                   onChange={this.handleChange}
                   value={this.state.formData.sets || ''}
@@ -120,7 +120,9 @@ class ItemsNew extends React.Component {
                 <label className="label">Reps</label>
                 <input
                   className="input"
+                  type="number"
                   name="reps"
+                  min="0"
                   placeholder="eg: 52.2"
                   onChange={this.handleChange}
                   value={this.state.formData.reps || ''}
@@ -131,7 +133,9 @@ class ItemsNew extends React.Component {
               <label className="label">Personal best (per Exercise)</label>
               <input
                 className="input"
+                type="number"
                 name="personalbest"
+                min="0"
                 placeholder="eg: 63.5"
                 onChange={this.handleChange}
                 value={this.state.formData.personalbest || ''}

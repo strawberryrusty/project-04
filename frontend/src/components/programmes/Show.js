@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 import {Link} from 'react-router-dom'
-// import Auth from '../../lib/Auth'
+import Auth from '../../lib/Auth'
 
 
 class ProgrammesShow extends React.Component {
@@ -15,8 +15,16 @@ class ProgrammesShow extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`/api/programmes/${this.props.match.params.id}`)
+    axios.get(`/api/programmes/${this.props.match.params.id}/`)
       .then(res => this.setState({ programme: res.data }))
+  }
+
+
+  handleDelete(){
+    axios.delete(`/api/programmes/${this.props.match.params.id}/`,{
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(()=> this.props.history.push('/api/programmes/'))
   }
 
   render(){
@@ -25,9 +33,25 @@ class ProgrammesShow extends React.Component {
     return (
       <section className="section">
         <div className="container">
+
+          {!this.state.programme && <h2 className="title is-2">Loading...</h2>}
+
+
           <div className="column is-half-tablet">
+
             <div key={this.state.programme.id}>
+
               <h1 className="title is-2">Name:{this.state.programme.name}</h1>
+              {Auth.isAuthenticated() && <div className="buttons">
+                <Link
+                  className="button"
+                  to={`/programmes/${this.state.programme.id}/edit`}
+                >Edit</Link>
+
+                <button className="button is-danger"
+                  onClick={this.handleDelete}>Delete</button>
+              </div>}
+
               <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
 
               {this.state.programme.items.map(keys =>

@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './components/pages/Home'
+import Navbar from './components/common/Navbar'
 import About from './components/pages/About'
 import ProgrammesNew from './components/programmes/New'
 import ProgrammesIndex from './components/programmes/Index'
 import ProgrammesShow from './components/programmes/Show'
+import ProgrammesEdit from './components/programmes/Edit'
 import ExercisesIndex from './components/exercises/Index'
 import ExercisesShow from './components/exercises/Show'
 import ItemsNew from './components/items/New'
@@ -26,11 +28,13 @@ class App extends React.Component {
     return (
       <div>
         <HashRouter>
+          <Navbar />
 
           <Switch>
             <Route path="/programmes/:id/items/new" component={ItemsNew} />
             <Route path="/exercises/:id" component={ExercisesShow}/>
             <Route path="/exercises" component={ExercisesIndex} />
+            <SecureRoute path="/programmes/:id/edit" component={ProgrammesEdit} />
             <SecureRoute path="/programmes/new" component={ProgrammesNew} />
             <Route path="/programmes/:id" component={ProgrammesShow}/>
             <Route path="/programmes" component={ProgrammesIndex} />

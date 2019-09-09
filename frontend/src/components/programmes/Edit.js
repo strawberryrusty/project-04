@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 
-class ProgrammesNew extends Component {
+class ProgrammesEdit extends React.Component {
 
   constructor() {
     super()
@@ -15,14 +15,19 @@ class ProgrammesNew extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidMount() {
+    axios.get(`/api/programmes/${this.props.match.params.id}`)
+      .then(res => this.setState({ formData: res.data }))
+  }
+
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/programmes/', this.state.formData, {
+    return axios.put(`/api/programmes/${this.props.match.params.id}/`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then((res) => this.props.history.push(`/programmes/${res.data.id}`))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+      .then(() => this.props.history.push(`/programmes/${this.props.match.params.id}/`))
+      .catch(err => this.setState({ errors: err.response.data })) // no err.response.data.errors in django
   }
 
   handleChange(e) {
@@ -31,16 +36,11 @@ class ProgrammesNew extends Component {
   }
 
 
-
-
   render() {
+    console.log(this.state.formData.name)
     return (
-      <section className="section add-background">
+      <section className="section">
         <div className="container">
-          <div className="box tableBorder">
-            <h2 className="title is-3 has-white-text">Creat your own special programme</h2>
-            <p>Creat your own special gymapp programme that suits you and your lifestyle and share it with the Gymapp community. Be a part of the Gymapp movement!</p>
-          </div>
 
           <form onSubmit={this.handleSubmit}>
             <div className="field">
@@ -48,15 +48,13 @@ class ProgrammesNew extends Component {
               <input
                 className="input"
                 name="name"
-                placeholder="eg: 30 day programme"
+                placeholder="eg: Winter workout"
                 value={this.state.formData.name || ''}
                 onChange={this.handleChange}
               />
               {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
             </div>
-            <div>
-              <button className="button">Create Programme</button>
-            </div>
+            <button className="button">Submit</button>
           </form>
 
         </div>
@@ -65,4 +63,4 @@ class ProgrammesNew extends Component {
   }
 }
 
-export default ProgrammesNew
+export default ProgrammesEdit
