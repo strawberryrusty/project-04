@@ -37,7 +37,7 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Personal Best:{keys.personalbest}</h2>
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
-                  <div><Link to="/programmes/items/new"><button className="button">Add Item</button></Link></div>
+                  <div><Link to="/programmes/:id/items/new"><button className="button">Add Item</button></Link></div>
                   <hr/>
                 </div>
               )}
