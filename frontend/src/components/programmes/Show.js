@@ -15,7 +15,7 @@ class ProgrammesShow extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`/api/programmes/${this.props.match.params.id}/`)
+    axios.get(`/api/programmes/${this.props.match.params.id}`)
       .then(res => this.setState({ programme: res.data }))
   }
 
@@ -28,6 +28,8 @@ class ProgrammesShow extends React.Component {
           <div className="column is-half-tablet">
             <div key={this.state.programme.id}>
               <h1 className="title is-2">Name:{this.state.programme.name}</h1>
+              <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
+
               {this.state.programme.items.map(keys =>
                 <div key={keys.id}>
                   <h2 className="title is-1">Day:{keys.day}</h2>
@@ -37,11 +39,9 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Personal Best:{keys.personalbest}</h2>
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
-                  <div><Link to="/programmes/:id/items/new"><button className="button">Add Item</button></Link></div>
                   <hr/>
                 </div>
               )}
-
             </div>
           </div>
         </div>

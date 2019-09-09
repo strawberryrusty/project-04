@@ -16,6 +16,8 @@ const days = [
 
 
 
+
+
 class ItemsNew extends React.Component {
   constructor(){
     super()
@@ -23,7 +25,7 @@ class ItemsNew extends React.Component {
     this.state = {
       formData: {
         day: '',
-        exercise: '',
+        exercise: '', //make it exercises, since it's an array
         sets: '',
         reps: '',
         personalbest: ''
@@ -36,13 +38,14 @@ class ItemsNew extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleDayChange = this.handleDayChange.bind(this)
     this.handleExerciseChange = this.handleExerciseChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post(`/api/programmes/${this.props.match.params.id}/items`, this.state.formData, {
+    axios.post(`/api/programmes/${this.props.match.params.id}/items/`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push(`programmes/${this.props.match.params.id}`))
@@ -55,17 +58,27 @@ class ItemsNew extends React.Component {
   }
 
   handleDayChange(selectedDay) {
-    const formData = { ...this.state.formData, day: selectedDay.map(option => option.value) }
+    const formData = { ...this.state.formData, day: selectedDay.value }
     this.setState({ formData })
   }
 
-  handleExerciseChange(e) {
-    const formData = {...this.state.formData, plotType: e.target.value }
+  handleExerciseChange(selectedExercise) {
+    console.log(selectedExercise)
+    const formData = {...this.state.formData, exercise: selectedExercise.value }
     this.setState({ formData, dropdownOpen: false })
 
   }
 
+  componentDidMount() {
+    axios.get('/api/exercises')
+      .then(res => this.setState({ exercises: res.data.map(exercise => {
+        return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
+      }) }))
+
+  }
+
   render() {
+    console.log(this.state)
     return (
       <section className="section">
         <div className="container">
@@ -77,70 +90,54 @@ class ItemsNew extends React.Component {
             <div className="field">
               <label className="label">Day</label>
               <Select
-                name="days"
                 options={days}
-                isMulti
                 onChange={this.handleDayChange}
               />
             </div>
             <label className="label">Choose your Exercise:</label>
-            <div className={`dropdown ${this.state.dropdownOpen ? 'is-active' : ''}`} onClick={this.toggleDropdown}>
-              <div className="dropdown-trigger">
-                <button type="button" className="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>Exercise</span>
-                  <span className="icon is-small">
-                    <i className="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div className="dropdown-menu" id="dropdown-menu" role="menu">
-                <div className="dropdown-content">
-                  <button type="button" className="dropdown-item" onClick={this.handleExerciseChange} value='Bench Press'>Bench Press</button>
-                  <button type="button" className="dropdown-item" onClick={this.handleExerciseChange} value='Squats'>Squats</button>
-                  <button type="button" className="dropdown-item" onClick={this.handleExerciseChange} value='Shoulder Press'>Shoulder Press</button>
-                  <button type="button" className="dropdown-item" onClick={this.handleExerciseChange} value='Deadlift'>Deadlift</button>
-                  <button type="button" className="dropdown-item" onClick={this.handleExerciseChange} value='Push Ups'>Push Ups</button>
-                  <button type="button" className="dropdown-item" onClick={this.handleExerciseChange} value='Crunches'>Crunches</button>
-                </div>
-              </div>
-              <div className="container">
-                <div className="field">
-                  <label className="label">Sets</label>
-                  <input
-                    className="input"
-                    type="number"
-                    name="numOfSets"
-                    onChange={this.handleChange}
-                    value={this.state.formData.sets || ''}
-                    placeholder="please add sets for the exercise"
-                  />
-                </div>
-              </div>
-              <div className="container">
-                <div className="field">
-                  <label className="label">Reps</label>
-                  <input
-                    className="input"
-                    type="number"
-                    name="numOfReps"
-                    onChange={this.handleChange}
-                    value={this.state.formData.reps || ''}
-                    placeholder="please add reps per set"
-                  />
-                </div>
-              </div>
+            <div className="field">
+              <label className="label">Exercise</label>
+              <Select
+                options={this.state.exercises} //get all the exercises
+                onChange={this.handleExerciseChange}
+              />
+            </div>
+
+            <div className="container">
               <div className="field">
-                <label className="label">Personal best (kgs)</label>
+                <label className="label">Sets</label>
                 <input
                   className="input"
-                  type="number"
-                  name="numOfSets"
+                  name="sets"
+                  placeholder="eg:25"
                   onChange={this.handleChange}
-                  value={this.state.formData.personalbest || ''}
-                  placeholder="please your PB on this exercise"
+                  value={this.state.formData.sets || ''}
                 />
               </div>
             </div>
+            <div className="container">
+              <div className="field">
+                <label className="label">Reps</label>
+                <input
+                  className="input"
+                  name="reps"
+                  placeholder="eg: 52.2"
+                  onChange={this.handleChange}
+                  value={this.state.formData.reps || ''}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Personal best (per Exercise)</label>
+              <input
+                className="input"
+                name="personalbest"
+                placeholder="eg: 63.5"
+                onChange={this.handleChange}
+                value={this.state.formData.personalbest || ''}
+              />
+            </div>
+
             <button className="button">Submit</button>
           </form>
         </div>
