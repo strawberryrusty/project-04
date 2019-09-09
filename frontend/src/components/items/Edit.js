@@ -15,18 +15,12 @@ const days = [
 ]
 
 
-class ItemsNew extends React.Component {
+class ItemsEdit extends React.Component {
   constructor(){
     super()
 
     this.state = {
-      formData: {
-        day: '',
-        exercise: '', //make it exercises, since it's an array
-        sets: '',
-        reps: '',
-        personalbest: ''
-      },
+      formData: {},
       dropdownOpen: false,
       errors: {}
 
@@ -39,10 +33,23 @@ class ItemsNew extends React.Component {
 
   }
 
+  componentDidMount() {
+    axios.get(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`)
+      .then(res => this.setState({ formData: res.data }))
+      .then(axios.get('/api/exercises')
+        .then(res => this.setState({ exercises: res.data.map(exercise => {
+          return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
+        }) })))
+    axios.get('/api/exercises')
+      .then(res => this.setState({ exercises: res.data.map(exercise => {
+        return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
+      }) }))
+  }
+
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post(`/api/programmes/${this.props.match.params.id}/items/`, this.state.formData, {
+    axios.put(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push(`programmes/${this.props.match.params.id}`))
@@ -66,15 +73,10 @@ class ItemsNew extends React.Component {
 
   }
 
-  componentDidMount() {
-    axios.get('/api/exercises')
-      .then(res => this.setState({ exercises: res.data.map(exercise => {
-        return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
-      }) }))
 
-  }
 
   render() {
+    if (!this.state.formData) return <h1>Loading...</h1>
     console.log(this.state)
     return (
       <section className="section">
@@ -142,4 +144,4 @@ class ItemsNew extends React.Component {
     )
   }
 }
-export default ItemsNew
+export default ItemsEdit

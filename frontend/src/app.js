@@ -10,6 +10,7 @@ import ProgrammesShow from './components/programmes/Show'
 import ExercisesIndex from './components/exercises/Index'
 import ExercisesShow from './components/exercises/Show'
 import ItemsNew from './components/items/New'
+import ItemsEdit from './components/items/Edit'
 
 
 import SecureRoute from './components/common/SecureRoute'
@@ -28,6 +29,7 @@ class App extends React.Component {
         <HashRouter>
 
           <Switch>
+            <Route path="/programmes/:id/items/:id/edit" component={ItemsEdit} />
             <Route path="/programmes/:id/items/new" component={ItemsNew} />
             <Route path="/exercises/:id" component={ExercisesShow}/>
             <Route path="/exercises" component={ExercisesIndex} />

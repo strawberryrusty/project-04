@@ -40,6 +40,7 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
                   <hr/>
+                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
                 </div>
               )}
             </div>
