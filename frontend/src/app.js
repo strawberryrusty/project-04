@@ -28,7 +28,7 @@ class App extends React.Component {
         <HashRouter>
 
           <Switch>
-            <Route path="/programmes/items/new" component={ItemsNew} />
+            <Route path="/programmes/:id/items/new" component={ItemsNew} />
             <Route path="/exercises/:id" component={ExercisesShow}/>
             <Route path="/exercises" component={ExercisesIndex} />
             <Route path="/programmes/new" component={ProgrammesNew} />
