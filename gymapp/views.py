@@ -188,7 +188,7 @@ class CategoryListView(APIView):
 
     def get(self, _request):
         categories = Category.objects.all() # get all the items
-        serializer = PopulatedCategorySerializer(categories, many=True)
+        serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data) # send the JSON to the client
 
 
@@ -216,7 +216,7 @@ class CategoryDetailView(APIView):
 
     def get(self, _request, pk):
         category = self.get_category(pk) # get a item by id (pk means primary key)
-        serializer = PopulatedCategorySerializer(category)
+        serializer = CategorySerializer(category)
 
         # pass the item to the template file
         return Response(serializer.data) # send the JSON to the client

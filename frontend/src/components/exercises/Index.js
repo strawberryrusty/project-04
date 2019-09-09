@@ -2,13 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import Select from 'react-select'
 
-const options = [
-  { value: 'Legs', label: 'Legs' },
-  { value: 'Core', label: 'Core' },
-  { value: 'Arms', label: 'Arms' },
-  { value: 'Shoulders', label: 'Shoulders' },
-  { value: 'Chest', label: 'Chest' }
-]
 
 
 import { Link } from 'react-router-dom'
@@ -18,23 +11,35 @@ class ExercisesIndex extends React.Component {
   constructor() {
     super()
     this.state = {
-      selectedOption: null
+      selectedCategory: null
     }
+    this.handleChange = this.handleChange.bind(this)
   }
 
 
   handleChange(selectedOption) {
-    this.setState({ selectedOption })
-    console.log('Option selected:', selectedOption)
+    console.log(selectedOption)
+    this.setState({ selectedCategory: selectedOption.value })
   }
 
   componentDidMount() {
     axios.get('/api/exercises')
       .then(res => this.setState({ exercises: res.data }))
+
+    axios.get('/api/categories/')
+      .then(res => this.setState({ categories: res.data.map(option => {
+        return {label: option.name, value: option.id}
+      }) }))
+
+  }
+
+  filterExercises(){
+    if(!this.state.selectedCategory) return this.state.exercises
+    return this.state.exercises.filter(exercise => exercise.categories.includes(this.state.selectedCategory))
   }
 
   render() {
-    // console.log(this.state.excercises)
+    console.log(this.state)
     const { selectedOption } = this.state
     return (
 
@@ -43,13 +48,13 @@ class ExercisesIndex extends React.Component {
           <Select
             value={selectedOption}
             onChange={this.handleChange}
-            options={options}
+            options={this.state.categories}
           />
           <div className="columns is-multiline">
 
             {!this.state.exercises && <h2 className="title is-2">Loading...</h2>}
 
-            {this.state.exercises && this.state.exercises.map(exercise =>
+            {this.state.exercises && this.filterExercises().map(exercise =>
               <div className="column is-one-quarter-desktop" key={exercise.id}>
                 <Link to={`/exercises/${exercise.id}`}>
                   <div className="card">
