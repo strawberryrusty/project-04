@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 import {Link} from 'react-router-dom'
-// import Auth from '../../lib/Auth'
+import Auth from '../../lib/Auth'
 
 
 class ProgrammesShow extends React.Component {
@@ -17,6 +17,13 @@ class ProgrammesShow extends React.Component {
   componentDidMount(){
     axios.get(`/api/programmes/${this.props.match.params.id}`)
       .then(res => this.setState({ programme: res.data }))
+  }
+
+  handleDelete(){
+    axios.delete(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`,{
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(()=> this.props.history.push(`/api/programmes/${this.props.match.params.id}/`))
   }
 
   render(){
@@ -41,6 +48,8 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
                   <hr/>
                   <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
+                  <button className="button is-danger"
+                    onClick={this.handleDelete}>Delete</button>
                 </div>
               )}
             </div>

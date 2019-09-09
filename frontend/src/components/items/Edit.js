@@ -40,10 +40,7 @@ class ItemsEdit extends React.Component {
         .then(res => this.setState({ exercises: res.data.map(exercise => {
           return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
         }) })))
-    axios.get('/api/exercises')
-      .then(res => this.setState({ exercises: res.data.map(exercise => {
-        return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
-      }) }))
+  
   }
 
   handleSubmit(e) {
