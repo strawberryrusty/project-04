@@ -12,7 +12,7 @@ import ExercisesShow from './components/exercises/Show'
 import ItemsNew from './components/items/New'
 
 
-
+import SecureRoute from './components/common/SecureRoute'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
@@ -31,7 +31,7 @@ class App extends React.Component {
             <Route path="/programmes/:id/items/new" component={ItemsNew} />
             <Route path="/exercises/:id" component={ExercisesShow}/>
             <Route path="/exercises" component={ExercisesIndex} />
-            <Route path="/programmes/new" component={ProgrammesNew} />
+            <SecureRoute path="/programmes/new" component={ProgrammesNew} />
             <Route path="/programmes/:id" component={ProgrammesShow}/>
             <Route path="/programmes" component={ProgrammesIndex} />
             <Route path="/register" component={Register} />

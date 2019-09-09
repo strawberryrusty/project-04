@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
-import { Link } from 'react-router-dom'
 
 class ProgrammesNew extends Component {
 
@@ -20,10 +19,10 @@ class ProgrammesNew extends Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/programmes', this.state.formData, {
+    axios.post('/api/programmes/', this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/programmes/'))
+      .then((res) => this.props.history.push(`/programmes/${res.data.id}`))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
@@ -59,9 +58,8 @@ class ProgrammesNew extends Component {
               />
               {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
             </div>
-            <div><Link to="/programmes/items/new"><button className="button">Add Item</button></Link></div>
             <div>
-              <button className="button">Submit</button>
+              <button className="button">Create Programme</button>
             </div>
           </form>
 

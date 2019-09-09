@@ -25,7 +25,7 @@ class Register extends React.Component {
     e.preventDefault()
 
 
-    axios.post('/api/register', this.state.formData)
+    axios.post('/api/register/', this.state.formData)
       .then(res => {
         toast.success(res.data.message)
         this.props.history.push('/login')
@@ -87,7 +87,7 @@ class Register extends React.Component {
                   <input
                     className="input"
                     type="password"
-                    name="passwordConfirmation"
+                    name="password_confirmation"
                     placeholder="eg: ••••••••"
                     onChange={this.handleChange}
                   />
