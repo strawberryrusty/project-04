@@ -27,6 +27,14 @@ class ProgrammesShow extends React.Component {
       .then(()=> this.props.history.push('/api/programmes/'))
   }
 
+  handleDeleteItems(){
+    axios.delete(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`,{
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(()=> this.props.history.push(`/api/programmes/${this.props.match.params.id}/`))
+
+  }
+
   render(){
     console.log(this.state.programme)
     if(!this.state.programme) return null
@@ -64,6 +72,9 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
                   <hr/>
+                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
+                  <button className="button is-danger"
+                    onClick={this.handleDelete}>Delete</button>
                 </div>
               )}
             </div>

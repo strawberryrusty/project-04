@@ -15,32 +15,38 @@ const days = [
 ]
 
 
-class ItemsNew extends React.Component {
+class ItemsEdit extends React.Component {
   constructor(){
     super()
 
     this.state = {
-      formData: {
-        day: '',
-        exercise: '', //make it exercises, since it's an array
-        sets: '',
-        reps: '',
-        personalbest: ''
-      },
+      formData: {},
       dropdownOpen: false,
       errors: {}
 
     }
+
     this.handleChange = this.handleChange.bind(this)
     this.handleDayChange = this.handleDayChange.bind(this)
     this.handleExerciseChange = this.handleExerciseChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+
+  }
+
+  componentDidMount() {
+    axios.get(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`)
+      .then(res => this.setState({ formData: res.data }))
+      .then(axios.get('/api/exercises')
+        .then(res => this.setState({ exercises: res.data.map(exercise => {
+          return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
+        }) })))
+  
   }
 
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post(`/api/programmes/${this.props.match.params.id}/items/`, this.state.formData, {
+    axios.put(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push(`programmes/${this.props.match.params.id}`))
@@ -64,15 +70,10 @@ class ItemsNew extends React.Component {
 
   }
 
-  componentDidMount() {
-    axios.get('/api/exercises')
-      .then(res => this.setState({ exercises: res.data.map(exercise => {
-        return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
-      }) }))
 
-  }
 
   render() {
+    if (!this.state.formData) return <h1>Loading...</h1>
     console.log(this.state)
     return (
       <section className="section">
@@ -103,9 +104,7 @@ class ItemsNew extends React.Component {
                 <label className="label">Sets</label>
                 <input
                   className="input"
-                  type="number"
                   name="sets"
-                  min="0"
                   placeholder="eg:25"
                   onChange={this.handleChange}
                   value={this.state.formData.sets || ''}
@@ -117,9 +116,7 @@ class ItemsNew extends React.Component {
                 <label className="label">Reps</label>
                 <input
                   className="input"
-                  type="number"
                   name="reps"
-                  min="0"
                   placeholder="eg: 52.2"
                   onChange={this.handleChange}
                   value={this.state.formData.reps || ''}
@@ -130,9 +127,7 @@ class ItemsNew extends React.Component {
               <label className="label">Personal best (per Exercise)</label>
               <input
                 className="input"
-                type="number"
                 name="personalbest"
-                min="0"
                 placeholder="eg: 63.5"
                 onChange={this.handleChange}
                 value={this.state.formData.personalbest || ''}
@@ -146,4 +141,4 @@ class ItemsNew extends React.Component {
     )
   }
 }
-export default ItemsNew
+export default ItemsEdit
