@@ -2,13 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Select from 'react-select'
 
-const options = [
-  { value: 5, label: 'Legs' },
-  { value: 4, label: 'Core' },
-  { value: 3, label: 'Arms' },
-  { value: 2, label: 'Shoulders' },
-  { value: 1, label: 'Chest' }
-]
+
 
 import { Link } from 'react-router-dom'
 
@@ -32,15 +26,17 @@ class ExercisesIndex extends React.Component {
     axios.get('/api/exercises')
       .then(res => this.setState({ exercises: res.data }))
 
+    axios.get('/api/categories/')
+      .then(res => this.setState({ categories: res.data.map(option => {
+        return {label: option.name, value: option.id}
+      }) }))
+
   }
 
   filterExercises(){
     if(!this.state.selectedCategory) return this.state.exercises
     return this.state.exercises.filter(exercise => exercise.categories.includes(this.state.selectedCategory))
   }
-
-
-
 
   render() {
     console.log(this.state)
@@ -52,7 +48,7 @@ class ExercisesIndex extends React.Component {
           <Select
             value={selectedOption}
             onChange={this.handleChange}
-            options={options}
+            options={this.state.categories}
           />
           <div className="columns is-multiline">
 
