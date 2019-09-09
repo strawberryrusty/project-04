@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './components/pages/Home'
 import About from './components/pages/About'
+import ProgrammesNew from './components/programmes/New'
 import ProgrammesIndex from './components/programmes/Index'
 import ProgrammesShow from './components/programmes/Show'
 import ExercisesIndex from './components/exercises/Index'
@@ -27,9 +28,10 @@ class App extends React.Component {
         <HashRouter>
 
           <Switch>
-            <Route path="/programmes/:id/items/new" component={ItemsNew} />
+            <Route path="/programmes/items/new" component={ItemsNew} />
             <Route path="/exercises/:id" component={ExercisesShow}/>
             <Route path="/exercises" component={ExercisesIndex} />
+            <Route path="/programmes/new" component={ProgrammesNew} />
             <Route path="/programmes/:id" component={ProgrammesShow}/>
             <Route path="/programmes" component={ProgrammesIndex} />
             <Route path="/register" component={Register} />

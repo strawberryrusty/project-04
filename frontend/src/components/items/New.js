@@ -42,11 +42,14 @@ class ItemsNew extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post(`/api/programmes/${this.props.match.params.id}/items`, this.state.formData, {
-      headers: { Authorization: `Bearer ${Auth.getToken()}`}
-    })
-      .then(() => this.props.history.push(`programmes/${this.props.match.params.id}`))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+    axios.get('/api/programmes/items/new')
+      .then(res => this.setState({ programmes: res.data }))
+
+    // axios.post('/api/items', this.state.formData, {
+    //   headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    // })
+    //   .then(() => this.props.history.push(`items/${this.props.match.params.id}`))
+    //   .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleChange(e) {

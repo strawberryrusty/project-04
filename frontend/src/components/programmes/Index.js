@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {Component} from 'react'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
 
-class ProgrammesIndex extends React.Component {
+class ProgrammesIndex extends Component {
 
   constructor() {
     super()
@@ -29,13 +29,13 @@ class ProgrammesIndex extends React.Component {
                 <Link to={`/programmes/${programme.id}`}>
                   <div className="card">
                     <div className="card-header">
-                      <h2 className="card-header-title">{programme.name}</h2>
+                      <h2 className="card-header-title">{programme.name}<button className="button">Delete</button></h2>
                     </div>
                   </div>
                 </Link>
               </div>
             )}
-
+            
           </div>
         </div>
       </section>
