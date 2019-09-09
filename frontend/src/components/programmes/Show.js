@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import Auth from '../../lib/Auth'
 
 
@@ -37,9 +37,11 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Personal Best:{keys.personalbest}</h2>
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
+                  <div><Link to="/programmes/items/new"><button className="button">Add Item</button></Link></div>
                   <hr/>
                 </div>
               )}
+
             </div>
           </div>
         </div>

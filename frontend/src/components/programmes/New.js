@@ -20,14 +20,11 @@ class ProgrammesNew extends Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.get('/api/programmes/new')
-      .then(res => this.setState({ programmes: res.data }))
-
-    // axios.post('/api/programmes', this.state.formData, {
-    //   headers: { Authorization: `Bearer ${Auth.getToken()}`}
-    // })
-    //   .then(() => this.props.history.push('/programmes/'))
-    //   .catch(err => this.setState({ errors: err.response.data.errors }))
+    axios.post('/api/programmes', this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(() => this.props.history.push('/programmes/'))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   handleChange(e) {

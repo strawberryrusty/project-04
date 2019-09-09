@@ -1,9 +1,9 @@
+import datetime
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth.models import User
 from django.conf import settings
-import datetime
 import jwt
 from .serializers import UserSerializer
 
@@ -35,5 +35,10 @@ class LoginView(APIView):
         if not user.check_password(password): #checks the users password
             raise AuthenticationFailed({'message': 'Invalid credentials'}) # if it fails
 
-        token = jwt.encode({'sub': user.id}, settings.SECRET_KEY, algorithm='HS256')
+        payload = {
+            'sub': user.id,
+            'iat': datetime.datetime.utcnow(),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=6)
+        }
+        token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
         return Response({'token':token, 'message':f'Welcome back {user.username}!'})

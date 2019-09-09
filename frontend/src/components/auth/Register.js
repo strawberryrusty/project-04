@@ -30,7 +30,7 @@ class Register extends React.Component {
         toast.success(res.data.message)
         this.props.history.push('/login')
       })
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   render() {
