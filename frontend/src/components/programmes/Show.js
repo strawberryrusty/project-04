@@ -12,14 +12,19 @@ class ProgrammesShow extends React.Component {
 
     this.state = {
     }
-
-    this.handleDelete= this.handleDelete.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
     this.handleDeleteItems = this.handleDeleteItems.bind(this)
   }
 
-  componentDidMount(){
+  getProgammes(){
     axios.get(`/api/programmes/${this.props.match.params.id}/`)
       .then(res => this.setState({ programme: res.data }))
+
+  }
+
+  componentDidMount(){
+    this.getProgammes()
+
   }
 
 
@@ -35,11 +40,11 @@ class ProgrammesShow extends React.Component {
       .then(()=> this.props.history.push('/programmes'))
   }
 
-  handleDeleteItems(){
-    axios.delete(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`,{
+  handleDeleteItems(e){
+    axios.delete(`/api/items/${e.target.id}/`,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(()=> this.props.history.push(`/programmes/${this.props.match.params.id}/`))
+      .then(()=> this.getProgammes())
 
   }
 
@@ -82,6 +87,12 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Personal Best:{keys.personalbest}</h2>
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
+<<<<<<< HEAD
+                  <hr/>
+                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
+                  <button id={keys.id} className="button is-danger"
+                    onClick={this.handleDeleteItems}>Delete</button>
+=======
                   <span><div className="buttons"><Link
                     className="button"
                     to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`}
@@ -91,6 +102,7 @@ class ProgrammesShow extends React.Component {
                     onClick={this.handleDeleteItems}>Delete Item</button></span>
                   <hr/>
 
+>>>>>>> development
                 </div>
               )}
             </div>
