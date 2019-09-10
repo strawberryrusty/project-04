@@ -10,7 +10,7 @@ Prashanth Mohan
 ​
 **You’ve come a long way, and it's time to show it.** This will be your most advanced project to date. It is __IMPORTANT__ to note that when we say _advanced_, the project doesn't necessarily need to have lots more functionality.
 ​
-**Remember:** Simple code is Stable code, so always favour refactoring and bug fixing over adding more functionality.
+**Remember:** Simple code is stable code, so always favour refactoring and bug fixing over adding more functionality.
 ​
 With this in mind, you need to be smart about how you plan, limit your project scope to be achievable (in terms of functionality) and focus on quality rather than quantity.
 ​
