@@ -127,7 +127,7 @@ class ItemsNew extends React.Component {
               </div>
             </div>
             <div className="field">
-              <label className="label">Personal best (per Exercise)</label>
+              <label className="label">Personal Best (per Exercise)</label>
               <input
                 className="input"
                 type="number"

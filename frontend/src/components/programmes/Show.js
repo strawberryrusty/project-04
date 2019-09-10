@@ -5,6 +5,16 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
+const days = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday'
+]
+
 
 class ProgrammesShow extends React.Component {
   constructor(){
@@ -18,7 +28,10 @@ class ProgrammesShow extends React.Component {
 
   getProgammes(){
     axios.get(`/api/programmes/${this.props.match.params.id}/`)
-      .then(res => this.setState({ programme: res.data }))
+      .then(res => {
+        res.data.items.sort((a, b) => days.indexOf(a.day) - days.indexOf(b.day))
+        this.setState({ programme: res.data })
+      })
 
   }
 
@@ -49,7 +62,6 @@ class ProgrammesShow extends React.Component {
   }
 
   render(){
-    console.log(this.state.programme)
     if(!this.state.programme) return null
     console.log(this.state.programme.user.email, 'user')
     return (
@@ -75,6 +87,7 @@ class ProgrammesShow extends React.Component {
               </div>}
 
               <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
+
 
               {this.state.programme.items.map(keys =>
 
