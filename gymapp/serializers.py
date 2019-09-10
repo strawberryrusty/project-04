@@ -1,6 +1,13 @@
 from rest_framework import serializers
 from jwt_auth.serializers import UserSerializer
-from .models import Programme, Item, Exercise, Category
+from .models import Programme, Item, Exercise, Category, Personalbest
+
+
+class PersonalbestSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Personalbest
+        fields = ('id', 'weight', 'date',)
 
 class ProgrammeSerializer(serializers.ModelSerializer):
 
@@ -11,9 +18,11 @@ class ProgrammeSerializer(serializers.ModelSerializer):
 
 class ItemSerializer(serializers.ModelSerializer):
 
+    personalbests = PersonalbestSerializer(many=True, read_only=True)
+
     class Meta:
         model = Item
-        fields = ('id', 'day', 'exercise', 'personalbest', 'sets', 'reps',)
+        fields = ('id', 'day', 'exercise', 'personalbests', 'sets', 'reps',)
 
 
 class ExerciseSerializer(serializers.ModelSerializer):
@@ -33,6 +42,8 @@ class CategorySerializer(serializers.ModelSerializer):
 class PopulatedItemSerializer(ItemSerializer):
 
     exercise = ExerciseSerializer()
+    personalbests = PersonalbestSerializer(many=True)
+
 
 
 class PopulatedProgrammeSerializer(ProgrammeSerializer):
@@ -46,7 +57,6 @@ class PopulatedProgrammeSerializer(ProgrammeSerializer):
 class PopulatedCategorySerializer(CategorySerializer):
 
     exercises = ExerciseSerializer(many=True)
-
 
 
 

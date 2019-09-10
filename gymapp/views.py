@@ -7,7 +7,7 @@ from .permissions import IsOwnerOrReadOnly
 
 
 from .models import Item, Programme, Category, Exercise
-from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer, CategorySerializer, PopulatedCategorySerializer, ExerciseSerializer
+from .serializers import ItemSerializer, ProgrammeSerializer, PopulatedProgrammeSerializer, CategorySerializer, PopulatedCategorySerializer, ExerciseSerializer, PersonalbestSerializer
 
 # Create your views here.
 
@@ -68,7 +68,25 @@ class ItemDetailView(APIView):
         return Response(status=204)
 
 
+class ItemPersonalBestListlView(APIView):
 
+    def get_item(self, pk):
+        try:
+            item = Item.objects.get(pk=pk)
+        except Item.DoesNotExist:
+            raise Http404
+
+        return item
+
+
+    def post(self, request, pk):
+        item = self.get_item(pk)
+        serializer = PersonalbestSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(item=item)# this attaches items to a particular programme
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
 
 
 class ProgrammeListView(APIView):
