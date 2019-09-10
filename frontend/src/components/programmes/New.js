@@ -22,7 +22,7 @@ class ProgrammesNew extends Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then((res) => this.props.history.push(`/programmes/${res.data.id}`))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   handleChange(e) {

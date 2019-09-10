@@ -1,7 +1,7 @@
 import datetime
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth.models import User
 from django.conf import settings
 import jwt
@@ -24,7 +24,7 @@ class LoginView(APIView):
         try:
             return User.objects.get(email=email)
         except User.DoesNotExist:
-            raise AuthenticationFailed({'message': 'Invalid credentials'})
+            raise PermissionDenied({'message': 'Invalid credentials'})
 
     def post(self, request):
 
@@ -33,7 +33,7 @@ class LoginView(APIView):
 
         user = self.get_user(email) # gets the user email
         if not user.check_password(password): #checks the users password
-            raise AuthenticationFailed({'message': 'Invalid credentials'}) # if it fails
+            raise PermissionDenied({'message': 'Invalid credentials'}) # if it fails
 
         payload = {
             'sub': user.id,
