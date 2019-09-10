@@ -73,7 +73,7 @@ class ItemsNew extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state, 'NEW')
     return (
       <section className="section">
         <div className="container">

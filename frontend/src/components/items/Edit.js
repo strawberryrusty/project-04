@@ -74,7 +74,6 @@ class ItemsEdit extends React.Component {
 
   render() {
     if (!this.state.formData) return <h1>Loading...</h1>
-    console.log(this.state)
     return (
       <section className="section">
         <div className="container">

@@ -6,7 +6,7 @@ class ProgrammeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Programme
-        fields = ('id', 'name',)
+        fields = ('id', 'name', 'image',)
 
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -41,7 +41,7 @@ class PopulatedProgrammeSerializer(ProgrammeSerializer):
     user = UserSerializer()
 
     class Meta(ProgrammeSerializer.Meta):
-        fields = ('id', 'name', 'items', 'user',)
+        fields = ('id', 'name', 'image', 'items', 'user',)
 
 class PopulatedCategorySerializer(CategorySerializer):
 

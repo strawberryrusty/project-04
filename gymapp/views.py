@@ -77,8 +77,15 @@ class ProgrammeListView(APIView):
 
     def get(self, request):
 
+        print(request.user.is_anonymous)
+        if request.user.is_anonymous:
+            return Response([])
 
-        programmes = Programme.objects.filter(user=request.user) # get all the items
+        if request.user.is_staff:
+            programmes = Programme.objects.all()
+        else:
+            programmes = Programme.objects.filter(user=request.user) # get all the items
+
         serializer = PopulatedProgrammeSerializer(programmes, many=True)
         return Response(serializer.data) # send the JSON to the client
 

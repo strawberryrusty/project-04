@@ -37,7 +37,6 @@ class ProgrammesEdit extends React.Component {
 
 
   render() {
-    console.log(this.state.formData.name)
     return (
       <section className="section">
         <div className="container">

@@ -18,7 +18,6 @@ class ExercisesIndex extends React.Component {
 
 
   handleChange(selectedOption) {
-    console.log(selectedOption)
     this.setState({ selectedCategory: selectedOption.value })
   }
 
@@ -39,7 +38,7 @@ class ExercisesIndex extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state, 'NEW')
     const { selectedOption } = this.state
     return (
 

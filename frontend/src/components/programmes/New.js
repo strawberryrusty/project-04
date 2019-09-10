@@ -54,6 +54,18 @@ class ProgrammesNew extends Component {
               />
               {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
             </div>
+            <div className="field">
+              <label className="label">Image</label>
+              <input
+                className="input"
+                name="image"
+                type="string"
+                placeholder="Enter URL here"
+                value={this.state.formData.image || ''}
+                onChange={this.handleChange}
+              />
+              {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
+            </div>
             <div>
               <button className="button">Create Programme</button>
             </div>
