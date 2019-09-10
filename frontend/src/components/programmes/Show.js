@@ -12,11 +12,19 @@ class ProgrammesShow extends React.Component {
 
     this.state = {
     }
+    this.handleDelete = this.handleDelete.bind(this)
+    this.handleDeleteItems = this.handleDeleteItems.bind(this)
+  }
+
+  getProgammes(){
+    axios.get(`/api/programmes/${this.props.match.params.id}/`)
+      .then(res => this.setState({ programme: res.data }))
+
   }
 
   componentDidMount(){
-    axios.get(`/api/programmes/${this.props.match.params.id}/`)
-      .then(res => this.setState({ programme: res.data }))
+    this.getProgammes()
+
   }
 
 
@@ -27,11 +35,11 @@ class ProgrammesShow extends React.Component {
       .then(()=> this.props.history.push('/api/programmes/'))
   }
 
-  handleDeleteItems(){
-    axios.delete(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`,{
+  handleDeleteItems(e){
+    axios.delete(`/api/items/${e.target.id}/`,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(()=> this.props.history.push(`/api/programmes/${this.props.match.params.id}/`))
+      .then(()=> this.getProgammes())
 
   }
 
@@ -73,8 +81,8 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
                   <hr/>
                   <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
-                  <button className="button is-danger"
-                    onClick={this.handleDelete}>Delete</button>
+                  <button id={keys.id} className="button is-danger"
+                    onClick={this.handleDeleteItems}>Delete</button>
                 </div>
               )}
             </div>
