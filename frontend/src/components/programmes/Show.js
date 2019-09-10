@@ -68,10 +68,10 @@ class ProgrammesShow extends React.Component {
                 <Link
                   className="button"
                   to={`/programmes/${this.state.programme.id}/edit`}
-                >Edit</Link>
+                >Edit Programme</Link>
 
                 <button className="button is-danger"
-                  onClick={this.handleDelete}>Delete</button>
+                  onClick={this.handleDelete}>Delete Programme</button>
               </div>}
 
               <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
@@ -88,17 +88,10 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
 
                   <hr/>
-                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
+                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit Item</Link></div>
                   <button id={keys.id} className="button is-danger"
-                    onClick={this.handleDeleteItems}>Delete</button>
+                    onClick={this.handleDeleteItems}>Delete Item</button>
 
-                  <span><div className="buttons"><Link
-                    className="button"
-                    to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`}
-                  >Edit Item</Link></div>
-
-                  <button className="button is-danger"
-                    onClick={this.handleDeleteItems}>Delete Item</button></span>
                   <hr/>
 
 

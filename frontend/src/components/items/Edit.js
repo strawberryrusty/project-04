@@ -34,13 +34,13 @@ class ItemsEdit extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/programmes/${this.props.match.params.id}/items/${this.props.match.params.id}`)
+    axios.get(`/api/items/${this.props.match.params.id}`)
       .then(res => this.setState({ formData: res.data }))
       .then(axios.get('/api/exercises')
         .then(res => this.setState({ exercises: res.data.map(exercise => {
           return {label: exercise.name, value: exercise.id} // map over res.data to get the exercises
         }) })))
-  
+
   }
 
   handleSubmit(e) {

@@ -17,23 +17,24 @@ const About = () => {
 
           <h2>About Developers</h2>
           <hr />
+          <div className="columns is-multiline">
+            <div className="column is-one-quarter-desktop is-offset-one-half">
+              <AboutCard
+                name="Ejike Chiboka"
+                image={'https://i.imgur.com/owdRqwP.jpg'}
+                githubLink={<a href="https://github.com/agkayster" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
+                link={<a href="https://www.linkedin.com/in/ejike-chiboka-pmp-1879815a/" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
+              />
+            </div>
 
-          <div className="column is-one-quarter-desktop is-offset-one-half">
-            <AboutCard
-              name="Ejike Chiboka"
-              image={'https://i.imgur.com/owdRqwP.jpg'}
-              githubLink={<a href="https://github.com/agkayster" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
-              link={<a href="https://www.linkedin.com/in/ejike-chiboka-pmp-1879815a/" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
-            />
-          </div>
-
-          <div className="column is-one-quarter-desktop is-offset-one-half">
-            <AboutCard
-              name="Prash Mohan"
-              image={'https://i.imgur.com/vlFtdWv.jpg'}
-              githubLink={<a href="https://github.com/strawberryrusty" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
-              link={<a href="https://www.linkedin.com/in/prash-mohan" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
-            />
+            <div className="column is-one-quarter-desktop is-offset-one-half">
+              <AboutCard
+                name="Prash Mohan"
+                image={'https://i.imgur.com/vlFtdWv.jpg'}
+                githubLink={<a href="https://github.com/strawberryrusty" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
+                link={<a href="https://www.linkedin.com/in/prash-mohan" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
+              />
+            </div>
           </div>
 
         </div>
