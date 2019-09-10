@@ -28,11 +28,16 @@ class ProgrammesShow extends React.Component {
   }
 
 
+  canModify(){
+    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.programme.user.id
+  }
+
+
   handleDelete(){
     axios.delete(`/api/programmes/${this.props.match.params.id}/`,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(()=> this.props.history.push('/api/programmes/'))
+      .then(()=> this.props.history.push('/programmes'))
   }
 
   handleDeleteItems(e){
@@ -46,6 +51,7 @@ class ProgrammesShow extends React.Component {
   render(){
     console.log(this.state.programme)
     if(!this.state.programme) return null
+    console.log(this.state.programme.user.email, 'user')
     return (
       <section className="section">
         <div className="container">
@@ -58,7 +64,7 @@ class ProgrammesShow extends React.Component {
             <div key={this.state.programme.id}>
 
               <h1 className="title is-2">Name:{this.state.programme.name}</h1>
-              {Auth.isAuthenticated() && <div className="buttons">
+              {this.canModify() && <div className="buttons">
                 <Link
                   className="button"
                   to={`/programmes/${this.state.programme.id}/edit`}
@@ -71,6 +77,7 @@ class ProgrammesShow extends React.Component {
               <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
 
               {this.state.programme.items.map(keys =>
+
                 <div key={keys.id}>
                   <h2 className="title is-1">Day:{keys.day}</h2>
                   <h2 className="title is-1">Exercise:{keys.exercise.name}</h2>
@@ -79,10 +86,22 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Personal Best:{keys.personalbest}</h2>
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
+<<<<<<< HEAD
                   <hr/>
                   <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit</Link></div>
                   <button id={keys.id} className="button is-danger"
                     onClick={this.handleDeleteItems}>Delete</button>
+=======
+                  <span><div className="buttons"><Link
+                    className="button"
+                    to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`}
+                  >Edit Item</Link></div>
+
+                  <button className="button is-danger"
+                    onClick={this.handleDeleteItems}>Delete Item</button></span>
+                  <hr/>
+
+>>>>>>> development
                 </div>
               )}
             </div>

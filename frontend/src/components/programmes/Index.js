@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
+import Auth from '../../lib/Auth'
 
 class ProgrammesIndex extends Component {
 
@@ -14,8 +15,14 @@ class ProgrammesIndex extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/programmes/')
+    axios.get('/api/programmes/', {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
       .then(res => this.setState({ programmes: res.data }))
+  }
+
+  canModify(){
+    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.programme.user.id
   }
 
 
@@ -23,12 +30,16 @@ class ProgrammesIndex extends Component {
 
   render() {
     console.log(this.state.programmes)
+    // if(!this.state.programme) return null
+
     return (
       <section className="section">
         <div className="container">
           <div className="columns is-multiline">
 
             {!this.state.programmes && <h2 className="title is-2">Loading...</h2>}
+
+            {this.state.programmes && !this.state.programmes.length && <h2 className="title is-2">Please go to Add Programme and create a Programme</h2>}
 
             {this.state.programmes && this.state.programmes.map(programme =>
               <div className="column is-one-quarter-desktop" key={programme.id}>

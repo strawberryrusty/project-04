@@ -38,9 +38,10 @@ class PopulatedItemSerializer(ItemSerializer):
 class PopulatedProgrammeSerializer(ProgrammeSerializer):
 
     items = PopulatedItemSerializer(many=True)
+    user = UserSerializer()
 
     class Meta(ProgrammeSerializer.Meta):
-        fields = ('id', 'name', 'items',)
+        fields = ('id', 'name', 'items', 'user',)
 
 class PopulatedCategorySerializer(CategorySerializer):
 

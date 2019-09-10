@@ -75,8 +75,10 @@ class ProgrammeListView(APIView):
 
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
-    def get(self, _request):
-        programmes = Programme.objects.all() # get all the items
+    def get(self, request):
+
+
+        programmes = Programme.objects.filter(user=request.user) # get all the items
         serializer = PopulatedProgrammeSerializer(programmes, many=True)
         return Response(serializer.data) # send the JSON to the client
 
