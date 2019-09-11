@@ -89,7 +89,8 @@ class ProgrammesShow extends React.Component {
   render(){
     console.log(this.state)
     if(!this.state.programme) return null
-    console.log(this.state.programme.user.email, 'user')
+    // const weight = this.state.programme.items[0].personalbests.pop().weight
+    // console.log(weight)
     return (
       <section className="section">
         <div className="container">
@@ -158,6 +159,8 @@ class ProgrammesShow extends React.Component {
                 )}
               </div>
             </div>
+          </div>
+          <div className="footer-spacing-show">
           </div>
         </div>
       </section>

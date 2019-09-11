@@ -30,6 +30,8 @@ class ExercisesShow extends React.Component {
               <img className="ShowImage" src={this.state.exercise.image} alt={this.state.exercise.name}/>
             </div>
           </div>
+          <div className="footer-spacing-exercises-show">
+          </div>
         </div>
       </section>
     )

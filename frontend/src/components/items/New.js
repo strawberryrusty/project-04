@@ -79,7 +79,7 @@ class ItemsNew extends React.Component {
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <div className="box tableBorder">
-              <h2 className="title is-3 has-white-text">What do you want to exercise?</h2>
+              <h2 className="title is-3 item-new-has-white-text">What do you want to exercise?</h2>
               <p>Please add an exercise to your day, and your specified reps, sets and personal best</p>
             </div>
             <div className="field">
@@ -141,6 +141,8 @@ class ItemsNew extends React.Component {
 
             <button className="button">Submit</button>
           </form>
+          <div className="footer-spacing-item-new">
+          </div>
         </div>
       </section>
     )
