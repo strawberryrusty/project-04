@@ -80,6 +80,7 @@ class ProgrammesShow extends React.Component {
 
   }
 
+
   render(){
     if(!this.state.programme) return null
     console.log(this.state.programme.user.email, 'user')
@@ -142,8 +143,6 @@ class ProgrammesShow extends React.Component {
                   </form>
 
                   <hr/>
-
-
                 </div>
               )}
             </div>
