@@ -7,6 +7,19 @@ $family-secondary: 'Ubuntu', sans-serif;
 $navbar-background-color: #444444;
 
 
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: 'Domine', serif;
+	-webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+
 .navbar {
   background-color:#444444;
 }
@@ -15,4 +28,86 @@ $navbar-background-color: #444444;
 .navbar-item{
   color: white;
   font-family: Tajawal;
+}
+
+.login-background {
+  background-image: url('https://static.makeuseof.com/wp-content/uploads/2017/07/workout-apps-sites-670x335.jpg');
+}
+
+.register-background {
+  background-image: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+}
+
+.card {
+  height: 100%;
+  box-shadow: 1px 1px 1px 1px #FFFFFF;
+  border: 1px solid #2F4F4F;
+  width: 500px;
+  border-radius: 15px;
+}
+
+.card-image{
+  object-fit: cover;
+  border-radius: 5px;
+  height: 80%;
+}
+
+// Controls background images in each section
+.section {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+//Footer styling
+#menu-footer-menu{
+  text-align: center;
+  color: white;
+}
+
+li#menu-item{
+  display: inline;
+  margin:0 10px 10px;
+}
+
+li.tabs{
+  display: inline;
+  margin: 100px;
+}
+
+h2.key{
+  text-align: center;
+}
+
+div.footer-bottom{
+  background-color: #444444;
+}
+
+#footer-social{
+  text-align: center;
+}
+
+.fa-3x{
+  margin:5px;
+}
+
+svg.path{
+  margin-top: 5px;
+}
+
+p.copyright{
+  color: white;
+  text-align: center;
+}
+
+// Controls login page
+.afterlogin{
+  height: 150px;
+}
+.afterregister{
+  height: 30px;
 }

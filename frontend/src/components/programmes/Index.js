@@ -34,23 +34,30 @@ class ProgrammesIndex extends Component {
     return (
       <section className="section">
         <div className="container">
-          <div className="columns is-multiline">
+          <div className="">
 
-            {!this.state.programmes && <h2 className="title is-2">Loading...</h2>}
+            <div className="box tableBorder">
+              {this.state.programmes && !this.state.programmes.length && <h2 className="title is-2">Please go to Add Programme and create a Programme</h2>}
+            </div>
 
-            {this.state.programmes && !this.state.programmes.length && <h2 className="title is-2">Please go to Add Programme and create a Programme</h2>}
-
-            {this.state.programmes && this.state.programmes.map(programme =>
-              <div className="column is-one-third-desktop" key={programme.id}>
-                <Link to={`/programmes/${programme.id}`}>
-                  <Card
-                    name={programme.name}
-                    image={programme.image}
-                  />
-                </Link>
+            <div className="box tableBorder">
+              hello
+              <div className="columns is-multiline">
+                {!this.state.programmes && <h2 className="title is-2">Loading...</h2>}
+                {this.state.programmes && this.state.programmes.map(programme =>
+                  <div className="column is-one-third-desktop" key={programme.id}>
+                    <Link to={`/programmes/${programme.id}`}>
+                      <Card
+                        name={programme.name}
+                        image={programme.image}
+                        location={programme.location}
+                      />
+                    </Link>
+                  </div>
+                )}
               </div>
-            )}
-
+            </div>
+            
           </div>
         </div>
       </section>

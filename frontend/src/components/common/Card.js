@@ -11,8 +11,11 @@ const Card = (props) => {
       </div>
       <div className="card-image">
         <figure className="image is-3by2">
-          <img src={props.image} alt={props.name} className="card-image-size"/>
+          <img src={props.image} alt={props.name} className="card-image"/>
         </figure>
+        <div className="card-content">
+          <p className="notes">{props.location}</p>
+        </div>
       </div>
     </div>
   )

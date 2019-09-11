@@ -39,7 +39,7 @@ class ProgrammesNew extends Component {
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Creat your own special programme</h2>
-            <p>Creat your own special gymapp programme that suits you and your lifestyle and share it with the Gymapp community. Be a part of the Gymapp movement!</p>
+            <p>Creat your own special Gympro programme that suits you and your lifestyle and share it with the Gympro community. Be a part of the Gympro movement!</p>
           </div>
 
           <form onSubmit={this.handleSubmit}>
@@ -64,7 +64,19 @@ class ProgrammesNew extends Component {
                 value={this.state.formData.image || ''}
                 onChange={this.handleChange}
               />
-              {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
+
+            </div>
+            <div className="field">
+              <label className="label">Location</label>
+              <input
+                className="input"
+                type="string"
+                name="location"
+                placeholder="New York"
+                value={this.state.formData.location || ''}
+                onChange={this.handleChange}
+              />
+
             </div>
             <div>
               <button className="button">Create Programme</button>

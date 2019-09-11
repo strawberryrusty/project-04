@@ -18,6 +18,7 @@ import ItemsEdit from './components/items/Edit'
 import SecureRoute from './components/common/SecureRoute'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
+import Footer from './components/pages/Footer'
 
 import 'bulma'
 import './style.scss'
@@ -46,6 +47,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
           </Switch>
         </HashRouter>
+        <Footer />
       </div>
     )
   }
