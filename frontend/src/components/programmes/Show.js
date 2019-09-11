@@ -101,8 +101,8 @@ class ProgrammesShow extends React.Component {
 
               <div key={this.state.programme.id}>
 
-                <h1 className="title is-2">{this.state.programme.name}</h1>
-                {this.canModify() && <div className="buttons">
+                <h1 className="title is-2 has-text-centered">{this.state.programme.name}</h1>
+                {this.canModify() && <div className="buttons" id="programmesbuttons">
                   <Link
                     className="button"
                     to={`/programmes/${this.state.programme.id}/edit`}
@@ -110,9 +110,8 @@ class ProgrammesShow extends React.Component {
 
                   <button className="button is-danger"
                     onClick={this.handleDelete}>Delete Programme</button>
+                  <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
                 </div>}
-
-                <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
 
 
                 {this.state.programme.items.map(item =>
@@ -124,7 +123,7 @@ class ProgrammesShow extends React.Component {
                     <div className="card-content">
                       <h2 className="content text"><span className="has-text-weight-semibold">Exercise: </span>{item.exercise.name}</h2>
                       <h2 className="content text"><span className="has-text-weight-semibold">Description: </span>{item.exercise.description}</h2>
-                      <img className="ShowImage" src={item.exercise.image} alt={item.exercise.name}/>
+                      <img className="ShowImage image" src={item.exercise.image} alt={item.exercise.name}/>
                       {item.personalbests.length > 0 &&
                         <h2 className="content text"><span className="has-text-weight-semibold">Personal Best: </span>{item.personalbests.slice(-1)[0].weight}</h2>
                       }
@@ -140,7 +139,7 @@ class ProgrammesShow extends React.Component {
                     <form id={item.id} onSubmit={this.handleNewPBSubmit}>
                       <div className="container">
                         <div className="field">
-                          <label className="label">New PB</label>
+                          <label className="label has-text-centered">New PB</label>
                           <input
                             className="input"
                             type="number"
@@ -152,7 +151,7 @@ class ProgrammesShow extends React.Component {
                           />
                         </div>
                       </div>
-                      <button className="button is-centered is-link is-rounded" on>Submit</button>
+                      <button className="button is-centered is-link is-rounded is-outlined is-fullwidth" on>Submit</button>
                     </form>
                     <hr/>
                   </div>

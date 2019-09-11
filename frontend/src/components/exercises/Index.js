@@ -44,11 +44,14 @@ class ExercisesIndex extends React.Component {
 
       <section className="section">
         <div className="container">
-          <Select
-            value={selectedOption}
-            onChange={this.handleChange}
-            options={this.state.categories}
-          />
+          <p> What Muscle group would you like to learn about?</p>
+          <div className="exercisefilter">
+            <Select
+              value={selectedOption}
+              onChange={this.handleChange}
+              options={this.state.categories}
+            />
+          </div>
           <div className="columns is-multiline">
 
             {!this.state.exercises && <h2 className="title is-2">Loading...</h2>}

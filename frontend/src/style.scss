@@ -110,6 +110,8 @@ body {
 }
 
 
+
+
 //Footer styling
 #menu-footer-menu{
   text-align: center;
@@ -248,3 +250,22 @@ p.copyright{
   width: 100%;
   border-radius: 15px;
 }
+
+.exercisefilter {
+  padding-bottom: 20px;
+}
+
+#programmesbuttons{
+  display: flex;
+  align-items: center;
+}
+
+// .card-equal-height {
+//    display: flex;
+//    flex-direction: column;
+//    height: 100%;
+// }
+//
+// .card .card-image .Image img {
+//   height: 50px;
+// }
