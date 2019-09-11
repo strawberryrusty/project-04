@@ -35,16 +35,16 @@ class ProgrammesNew extends Component {
 
   render() {
     return (
-      <section className="section add-background">
+      <section className="section programmes-new-background">
         <div className="container">
           <div className="box tableBorder">
-            <h2 className="title is-3 has-white-text">Creat your own special programme</h2>
-            <p>Creat your own special Gympro programme that suits you and your lifestyle and share it with the Gympro community. Be a part of the Gympro movement!</p>
+            <h2 className="title is-3 has-white-text">Create your own special programme</h2>
+            <p>Create your own special Gympro programme that suits you and your lifestyle and share it with the Gympro community. Be a part of the Gympro movement!</p>
           </div>
 
           <form onSubmit={this.handleSubmit}>
             <div className="field">
-              <label className="label">Name</label>
+              <label className="label-new">Name</label>
               <input
                 className="input"
                 name="name"
@@ -55,7 +55,7 @@ class ProgrammesNew extends Component {
               {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
             </div>
             <div className="field">
-              <label className="label">Image</label>
+              <label className="label-new">Image</label>
               <input
                 className="input"
                 name="image"
@@ -67,7 +67,7 @@ class ProgrammesNew extends Component {
 
             </div>
             <div className="field">
-              <label className="label">Location</label>
+              <label className="label-new">Location</label>
               <input
                 className="input"
                 type="string"

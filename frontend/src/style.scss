@@ -38,6 +38,19 @@ body {
   background-image: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
 }
 
+.programmes-index-background {
+  background-image: url('https://image.freepik.com/free-photo/gym-interior-with-equipments_23-2147949749.jpg');
+}
+
+
+.programmes-new-background {
+  background-image: url('https://www.horshamblog.co.uk/wp-content/uploads/2018/01/new-free-gym-horsham-park-1-1024x684.jpg');
+}
+
+.programmes-edit-background {
+  background-image: url('');
+}
+
 .card {
   height: 100%;
   box-shadow: 1px 1px 1px 1px #FFFFFF;
@@ -110,4 +123,12 @@ p.copyright{
 }
 .afterregister{
   height: 30px;
+}
+
+
+.label-new{
+  color: white;
+}
+.section.programmes-new-background{
+  height: -550px;
 }

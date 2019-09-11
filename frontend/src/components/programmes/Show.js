@@ -21,9 +21,14 @@ class ProgrammesShow extends React.Component {
     super()
 
     this.state = {
+      formData: {
+        newpb: ''
+      }
     }
     this.handleDelete = this.handleDelete.bind(this)
     this.handleDeleteItems = this.handleDeleteItems.bind(this)
+    this.handleNewPBSubmit = this.handleNewPBSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   getProgammes(){
@@ -51,6 +56,20 @@ class ProgrammesShow extends React.Component {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(()=> this.props.history.push('/programmes'))
+  }
+
+
+  handleNewPBSubmit(e){
+    axios.post(`/api/items/${e.target.id}/personalbests`,{
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(()=> this.getProgammes())
+
+  }
+
+  handleChange(e) {
+    const formData = { ...this.state.formData, [e.target.name]: e.target.value }
+    this.setState({ formData })
   }
 
   handleDeleteItems(e){
@@ -96,7 +115,7 @@ class ProgrammesShow extends React.Component {
                   <h2 className="title is-1">Exercise:{keys.exercise.name}</h2>
                   <h2 className="title is-1">Description:{keys.exercise.description}</h2>
                   <img className="ShowImage" src={keys.exercise.image} alt={keys.exercise.name}/>
-                  <h2 className="title is-1">Personal Best:{keys.personalbest}</h2>
+                  <h2 className="title is-1">Personal Best:{keys.personalbest || 0}</h2>
                   <h2 className="title is-1">Sets:{keys.sets}</h2>
                   <h2 className="title is-1">Reps:{keys.reps}</h2>
 
@@ -104,6 +123,23 @@ class ProgrammesShow extends React.Component {
                   <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit Item</Link></div>
                   <button id={keys.id} className="button is-danger"
                     onClick={this.handleDeleteItems}>Delete Item</button>
+                  <form onSubmit={this.handleNewPBSubmit}>
+                    <div className="container">
+                      <div className="field">
+                        <label className="label">New PB</label>
+                        <input
+                          className="input"
+                          type="number"
+                          name="personalbest"
+                          min="0"
+                          placeholder="weight"
+                          value={this.state.formData.personalbest || ''}
+                          onChange={this.handleChange}
+                        />
+                      </div>
+                    </div>
+                    <button className="button">Submit</button>
+                  </form>
 
                   <hr/>
 

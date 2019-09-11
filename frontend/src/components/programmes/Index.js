@@ -32,7 +32,7 @@ class ProgrammesIndex extends Component {
   render() {
 
     return (
-      <section className="section">
+      <section className="section programmes-index-background">
         <div className="container">
           <div className="">
 
@@ -41,7 +41,6 @@ class ProgrammesIndex extends Component {
             </div>
 
             <div className="box tableBorder">
-              hello
               <div className="columns is-multiline">
                 {!this.state.programmes && <h2 className="title is-2">Loading...</h2>}
                 {this.state.programmes && this.state.programmes.map(programme =>
@@ -57,7 +56,7 @@ class ProgrammesIndex extends Component {
                 )}
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>

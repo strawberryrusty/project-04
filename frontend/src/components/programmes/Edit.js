@@ -38,7 +38,7 @@ class ProgrammesEdit extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section programmes-edit-background">
         <div className="container">
 
           <form onSubmit={this.handleSubmit}>
