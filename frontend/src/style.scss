@@ -141,4 +141,38 @@ p.copyright{
   &.is-Monday {
     color: green;
   }
+  &.is-Tuesday {
+    color: blue;
+  }
+  &.is-Wednesday {
+    color: orange;
+  }
+  &.is-Thursday {
+    color: red;
+  }
+  &.is-Thursday {
+    color: lime;
+  }
+  &.is-Friday {
+    color: teal;
+  }
+  &.is-Saturday {
+    color: DeepPink;
+  }
+  &.is-Saturday {
+    color: SlateBlue;
+  }
+}
+
+
+.programme-section {
+  text-align: center;
+}
+
+.itemcard {
+  height: 400px;
+  box-shadow: 1px 1px 1px 1px #FFFFFF;
+  border: 1px solid #2F4F4F;
+  width: 100%;
+  border-radius: 15px;
 }
