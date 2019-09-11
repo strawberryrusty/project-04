@@ -84,7 +84,8 @@ class ProgrammesShow extends React.Component {
 
   render(){
     if(!this.state.programme) return null
-    console.log(this.state.programme.user.email, 'user')
+    // const weight = this.state.programme.items[0].personalbests.pop().weight
+    // console.log(weight)
     return (
       <section className="section">
         <div className="container">
@@ -110,22 +111,22 @@ class ProgrammesShow extends React.Component {
               <div><Link to={`/programmes/${this.state.programme.id}/items/new`} className="button">Add Item</Link></div>
 
 
-              {this.state.programme.items.map(keys =>
+              {this.state.programme.items.map(item =>
 
-                <div key={keys.id}>
-                  <h2 className="title is-1">Day:{keys.day}</h2>
-                  <h2 className="title is-1">Exercise:{keys.exercise.name}</h2>
-                  <h2 className="title is-1">Description:{keys.exercise.description}</h2>
-                  <img className="ShowImage" src={keys.exercise.image} alt={keys.exercise.name}/>
-                  <h2 className="title is-1">Personal Best:{keys.personalbests.slice(-1).weight}</h2>
-                  <h2 className="title is-1">Sets:{keys.sets}</h2>
-                  <h2 className="title is-1">Reps:{keys.reps}</h2>
+                <div key={item.id}>
+                  <h2 className="title is-1">Day:{item.day}</h2>
+                  <h2 className="title is-1">Exercise:{item.exercise.name}</h2>
+                  <h2 className="title is-1">Description:{item.exercise.description}</h2>
+                  <img className="ShowImage" src={item.exercise.image} alt={item.exercise.name}/>
+                  <h2 className="title is-1">Personal Best: {item.personalbests.slice(-1)[0].weight}</h2>
+                  <h2 className="title is-1">Sets:{item.sets}</h2>
+                  <h2 className="title is-1">Reps:{item.reps}</h2>
 
                   <hr/>
-                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit Item</Link></div>
-                  <button id={keys.id} className="button is-danger"
+                  <div><Link to={`/programmes/${this.state.programme.id}/items/${item.id}/edit`} className="button">Edit Item</Link></div>
+                  <button id={item.id} className="button is-danger"
                     onClick={this.handleDeleteItems}>Delete Item</button>
-                  <form id={keys.id} onSubmit={this.handleNewPBSubmit}>
+                  <form id={item.id} onSubmit={this.handleNewPBSubmit}>
                     <div className="container">
                       <div className="field">
                         <label className="label">New PB</label>
@@ -140,7 +141,7 @@ class ProgrammesShow extends React.Component {
                         />
                       </div>
                     </div>
-                    <button className="button" on>Submit</button>
+                    <button className="button" >Submit</button>
                   </form>
                   <hr/>
                 </div>

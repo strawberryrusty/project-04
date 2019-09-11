@@ -64,7 +64,6 @@ class ProgrammesNew extends Component {
                 value={this.state.formData.image || ''}
                 onChange={this.handleChange}
               />
-
             </div>
             <div className="field">
               <label className="label-new">Location</label>
