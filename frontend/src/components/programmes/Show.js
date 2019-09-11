@@ -32,7 +32,7 @@ class ProgrammesShow extends React.Component {
 
   }
 
-  getProgammes(){
+  getProgamme(){
     axios.get(`/api/programmes/${this.props.match.params.id}/`)
       .then(res => {
         res.data.items.sort((a, b) => days.indexOf(a.day) - days.indexOf(b.day))
@@ -42,7 +42,7 @@ class ProgrammesShow extends React.Component {
   }
 
   componentDidMount(){
-    this.getProgammes()
+    this.getProgamme()
 
   }
 
@@ -63,7 +63,7 @@ class ProgrammesShow extends React.Component {
     axios.delete(`/api/items/${e.target.id}/`,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(()=> this.getProgammes())
+      .then(()=> this.getProgamme())
 
   }
 
@@ -73,7 +73,11 @@ class ProgrammesShow extends React.Component {
     axios.post(`/api/items/${e.target.id}/personalbests`, this.state.formData,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(()=> this.getProgammes())
+      .then(()=> {
+        const formData = {...this.state.formData, weight: ''}
+        this.setState({ formData })
+        this.getProgamme()
+      })
 
   }
 
@@ -83,6 +87,7 @@ class ProgrammesShow extends React.Component {
   }
 
   render(){
+    console.log(this.state)
     if(!this.state.programme) return null
     // const weight = this.state.programme.items[0].personalbests.pop().weight
     // console.log(weight)
@@ -113,19 +118,26 @@ class ProgrammesShow extends React.Component {
 
               {this.state.programme.items.map(item =>
 
-                <div key={item.id}>
-                  <h2 className="title is-1">Day:{item.day}</h2>
-                  <h2 className="title is-1">Exercise:{item.exercise.name}</h2>
-                  <h2 className="title is-1">Description:{item.exercise.description}</h2>
-                  <img className="ShowImage" src={item.exercise.image} alt={item.exercise.name}/>
-                  <h2 className="title is-1">Personal Best: {item.personalbests.slice(-1)[0].weight}</h2>
-                  <h2 className="title is-1">Sets:{item.sets}</h2>
-                  <h2 className="title is-1">Reps:{item.reps}</h2>
-
+                <div key={item.id} className="card">
+                  <div className="card-header">
+                    <h2 className={`card-header-title title is-4 tag is-${item.day}`}> Day:{item.day}</h2>
+                  </div>
+                  <div className="card-content">
+                    <h2 className="content text"><span className="has-text-weight-semibold">Exercise: </span>{item.exercise.name}</h2>
+                    <h2 className="content text"><span className="has-text-weight-semibold">Description: </span>{item.exercise.description}</h2>
+                    <img className="ShowImage" src={item.exercise.image} alt={item.exercise.name}/>
+                    {item.personalbests.length > 0 &&
+                      <h2 className="content text"><span className="has-text-weight-semibold">Personal Best: </span>{item.personalbests.slice(-1)[0].weight}</h2>
+                    }
+                    <h2 className="content text"><span className="has-text-weight-semibold">Sets: </span>{item.sets}</h2>
+                    <h2 className="content text"><span className="has-text-weight-semibold">Reps: </span>{item.reps}</h2>
+                  </div>
                   <hr/>
-                  <div><Link to={`/programmes/${this.state.programme.id}/items/${item.id}/edit`} className="button">Edit Item</Link></div>
-                  <button id={item.id} className="button is-danger"
-                    onClick={this.handleDeleteItems}>Delete Item</button>
+                  <div className="buttons is-centered">
+                    <div><Link to={`/programmes/${this.state.programme.id}/items/${item.id}/edit`} className="button">Edit Item</Link></div>
+                    <button id={item.id} className="button is-danger"
+                      onClick={this.handleDeleteItems}>Delete Item</button>
+                  </div>
                   <form id={item.id} onSubmit={this.handleNewPBSubmit}>
                     <div className="container">
                       <div className="field">

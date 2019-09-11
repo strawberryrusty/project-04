@@ -22,7 +22,7 @@ class Exercise(models.Model):
 
 class Programme(models.Model):
     name = models.CharField(max_length=20)
-    image = models.CharField(max_length=500)
+    image = models.CharField(max_length=500, blank=True)
     location = models.CharField(max_length=50)
     user = models.ForeignKey(User, related_name='programmes', on_delete=models.CASCADE)
 
