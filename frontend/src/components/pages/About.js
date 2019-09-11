@@ -18,7 +18,7 @@ const About = () => {
           <h2>About Developers</h2>
           <hr />
           <div className="columns is-multiline">
-            <div className="column is-one-quarter-desktop is-offset-one-half">
+            <div className="column is-one-quarter-desktop is-offset-one-quarter">
               <AboutCard
                 name="Ejike Chiboka"
                 image={'https://i.imgur.com/owdRqwP.jpg'}
@@ -27,7 +27,7 @@ const About = () => {
               />
             </div>
 
-            <div className="column is-one-quarter-desktop is-offset-one-half">
+            <div className="column is-one-quarter-desktop">
               <AboutCard
                 name="Prash Mohan"
                 image={'https://i.imgur.com/vlFtdWv.jpg'}

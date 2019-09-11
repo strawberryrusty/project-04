@@ -96,6 +96,7 @@ body {
 }
 
 .card {
+  overflow: hidden;
   height: 100%;
   box-shadow: 1px 1px 1px 1px #FFFFFF;
   border: 1px solid #2F4F4F;
@@ -108,8 +109,6 @@ body {
   border-radius: 5px;
   height: 80%;
 }
-
-
 
 
 //Footer styling
@@ -260,12 +259,13 @@ p.copyright{
   align-items: center;
 }
 
-// .card-equal-height {
-//    display: flex;
-//    flex-direction: column;
-//    height: 100%;
-// }
-//
-// .card .card-image .Image img {
-//   height: 50px;
-// }
+.card.exercise-card {
+
+  .card-image {
+    height: 150px;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

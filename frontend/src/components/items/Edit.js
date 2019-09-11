@@ -122,17 +122,7 @@ class ItemsEdit extends React.Component {
                 />
               </div>
             </div>
-            <div className="field">
-              <label className="label">Personal best (per Exercise)</label>
-              <input
-                className="input"
-                name="personalbest"
-                placeholder="eg: 63.5"
-                onChange={this.handleChange}
-                value={this.state.formData.personalbest || ''}
-              />
-            </div>
-
+  
             <button className="button">Submit</button>
           </form>
         </div>
