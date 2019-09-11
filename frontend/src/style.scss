@@ -28,6 +28,7 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: -850px;
 }
 
 //Controls the programmes index table border
@@ -173,6 +174,10 @@ p.copyright{
 
 .footer-spacing-edit {
   height: 220px;
+}
+
+.footer-spacing-index {
+  height: 300px;
 }
 
 .title.is-3.show-has-white-text{

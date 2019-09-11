@@ -56,7 +56,8 @@ class ProgrammesIndex extends Component {
                 )}
               </div>
             </div>
-
+            <div className="footer-spacing-index">
+            </div>
           </div>
         </div>
       </section>
