@@ -69,6 +69,8 @@ class ExercisesIndex extends React.Component {
             )}
 
           </div>
+          <div className="footer-spacing-exercises">
+          </div>
         </div>
       </section>
     )

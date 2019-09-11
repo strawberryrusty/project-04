@@ -19,7 +19,29 @@ body {
      -moz-osx-font-smoothing: grayscale;
 }
 
+// Controls background images in each section
+.section {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
+//Controls the programmes index table border
+
+.box {
+    background-color: rgba(68,68,68,0.8);
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(10,10,10,0.1), 0 0 0 1px rgba(10,10,10,0.1);
+    color: #fff;
+    display: block;
+    padding: 1.25rem;
+}
+
+// Everything Navbar
 .navbar {
   background-color:#444444;
 }
@@ -29,6 +51,24 @@ body {
   color: white;
   font-family: Tajawal;
 }
+
+.navbar-burger {
+    color: #444444;
+    cursor: pointer;
+    display: block;
+    height: 3.25rem;
+    position: relative;
+    width: 3.25rem;
+    margin-left: auto;
+}
+
+.navbar-menu {
+  background-color: #444444;
+  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+  padding: 0.5rem 0;
+}
+
+//All Background images
 
 .login-background {
   background-image: url('https://static.makeuseof.com/wp-content/uploads/2017/07/workout-apps-sites-670x335.jpg');
@@ -69,16 +109,6 @@ body {
   height: 80%;
 }
 
-// Controls background images in each section
-.section {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 //Footer styling
 #menu-footer-menu{
@@ -120,6 +150,33 @@ p.copyright{
   color: white;
   text-align: center;
 }
+.footer-spacing {
+  height: 95px;
+}
+
+.footer-spacing-show {
+  height: 300px;
+}
+
+.footer-spacing-exercises {
+  height: 50px;
+}
+
+.footer-spacing-item-new {
+  height: 5px;
+}
+
+.footer-spacing-exercises-show {
+  height: 10px;
+}
+
+.title.is-3.show-has-white-text{
+  color: white;
+}
+
+
+
+
 
 // Controls login page
 .afterlogin{
@@ -133,9 +190,8 @@ p.copyright{
 .label-new{
   color: white;
 }
-.section.programmes-new-background{
-  height: -550px;
-}
+
+
 
 .tag {
   &.is-Monday {

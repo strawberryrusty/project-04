@@ -141,6 +141,8 @@ class ItemsNew extends React.Component {
 
             <button className="button">Submit</button>
           </form>
+          <div className="footer-spacing-item-new">
+          </div>
         </div>
       </section>
     )
