@@ -79,7 +79,8 @@ class ProgrammesEdit extends React.Component {
             </div>
             <button className="button">Submit</button>
           </form>
-
+          <div className="footer-spacing-edit">
+          </div>
         </div>
       </section>
     )

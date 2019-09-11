@@ -39,7 +39,7 @@ class Register extends React.Component {
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 register-has-white-text">Register</h2>
-            <p>Sign up here for a complete Gymapp experience</p>
+            <p>Sign up here for a complete Gympro experience</p>
           </div>
           <div className="box tableBorder">
             <form onSubmit={this.handleSubmit}>

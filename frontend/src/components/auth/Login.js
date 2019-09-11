@@ -43,7 +43,7 @@ class Login extends React.Component {
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <div className="box tableBorder">
-              <h2 className="title is-3 has-white-text">Login</h2>
+              <h2 className="title is-3 login-has-white-text">Login</h2>
             </div>
             <div className="box tableBorder">
               <div className="field">
