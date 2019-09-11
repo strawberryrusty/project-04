@@ -112,19 +112,24 @@ class ProgrammesShow extends React.Component {
 
               {this.state.programme.items.map(keys =>
 
-                <div key={keys.id}>
-                  <h2 className="title is-1">Day:{keys.day}</h2>
-                  <h2 className="title is-1">Exercise:{keys.exercise.name}</h2>
-                  <h2 className="title is-1">Description:{keys.exercise.description}</h2>
-                  <img className="ShowImage" src={keys.exercise.image} alt={keys.exercise.name}/>
-                  <h2 className="title is-1">Personal Best:{keys.personalbests.slice(-1).weight}</h2>
-                  <h2 className="title is-1">Sets:{keys.sets}</h2>
-                  <h2 className="title is-1">Reps:{keys.reps}</h2>
-
+                <div key={keys.id} className="card">
+                  <div className="card-header">
+                    <h2 className={`card-header-title title is-4 tag is-${keys.day}`}> Day:{keys.day}</h2>
+                  </div>
+                  <div className="card-content">
+                    <h2 className="content text"><span className="has-text-weight-semibold">Exercise: </span>{keys.exercise.name}</h2>
+                    <h2 className="content text"><span className="has-text-weight-semibold">Description: </span>{keys.exercise.description}</h2>
+                    <img className="ShowImage" src={keys.exercise.image} alt={keys.exercise.name}/>
+                    <h2 className="content text"><span className="has-text-weight-semibold">Personal Best: </span>{keys.personalbests.slice(-1).weight}</h2>
+                    <h2 className="content text"><span className="has-text-weight-semibold">Sets: </span>{keys.sets}</h2>
+                    <h2 className="content text"><span className="has-text-weight-semibold">Reps: </span>{keys.reps}</h2>
+                  </div>
                   <hr/>
-                  <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit Item</Link></div>
-                  <button id={keys.id} className="button is-danger"
-                    onClick={this.handleDeleteItems}>Delete Item</button>
+                  <div className="buttons is-centered">
+                    <div><Link to={`/programmes/${this.state.programme.id}/items/${keys.id}/edit`} className="button">Edit Item</Link></div>
+                    <button id={keys.id} className="button is-danger"
+                      onClick={this.handleDeleteItems}>Delete Item</button>
+                  </div>
                   <form id={keys.id} onSubmit={this.handleNewPBSubmit}>
                     <div className="container">
                       <div className="field">
@@ -140,7 +145,7 @@ class ProgrammesShow extends React.Component {
                         />
                       </div>
                     </div>
-                    <button className="button" on>Submit</button>
+                    <button className="button is-centered is-link is-rounded" on>Submit</button>
                   </form>
                   <hr/>
                 </div>

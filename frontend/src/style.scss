@@ -59,7 +59,7 @@ body {
   height: 100%;
   box-shadow: 1px 1px 1px 1px #FFFFFF;
   border: 1px solid #2F4F4F;
-  width: 500px;
+  width: 800px;
   border-radius: 15px;
 }
 
@@ -135,4 +135,10 @@ p.copyright{
 }
 .section.programmes-new-background{
   height: -550px;
+}
+
+.tag {
+  &.is-Monday {
+    color: green;
+  }
 }

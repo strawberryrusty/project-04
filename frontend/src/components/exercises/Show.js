@@ -25,8 +25,8 @@ class ExercisesShow extends React.Component {
         <div className="container">
           <div className="column is-half-tablet">
             <div key={this.state.exercise.id}>
-              <h1 className="title is-2">Name:{this.state.exercise.name}</h1>
-              <h2 className="subtitle is-4">Description:{this.state.exercise.description}</h2>
+              <h1 className="title is-2">{this.state.exercise.name}</h1>
+              <h2 className="subtitle is-5">Description:{this.state.exercise.description}</h2>
               <img className="ShowImage" src={this.state.exercise.image} alt={this.state.exercise.name}/>
             </div>
           </div>
