@@ -530,7 +530,7 @@
     "day": "Monday",
     "sets": 6,
     "reps": 7,
-    "programme": 13,
+    "programme": 12,
     "exercise": 4
   }
 },
@@ -541,7 +541,7 @@
     "day": "Tuesday",
     "sets": 66,
     "reps": 66,
-    "programme": 14,
+    "programme": 12,
     "exercise": 2
   }
 },
@@ -552,7 +552,7 @@
     "day": "Monday",
     "sets": 100,
     "reps": 88,
-    "programme": 14,
+    "programme": 12,
     "exercise": 2
   }
 },
@@ -629,7 +629,7 @@
     "day": "Tuesday",
     "sets": 5,
     "reps": 5,
-    "programme": 14,
+    "programme": 12,
     "exercise": 1
   }
 },
@@ -640,7 +640,7 @@
     "day": "Sunday",
     "sets": 69,
     "reps": 69,
-    "programme": 14,
+    "programme": 12,
     "exercise": 12
   }
 },
@@ -673,7 +673,7 @@
     "day": "Tuesday",
     "sets": 56,
     "reps": 56,
-    "programme": 13,
+    "programme": 12,
     "exercise": 18
   }
 },
@@ -684,7 +684,7 @@
     "day": "Monday",
     "sets": 66,
     "reps": 66,
-    "programme": 13,
+    "programme": 12,
     "exercise": 2
   }
 },
