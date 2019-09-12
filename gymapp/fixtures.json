@@ -307,6 +307,19 @@
   "model": "gymapp.exercise",
   "pk": 25,
   "fields": {
+    "name": "Lunges",
+    "description": "Lunges work your thighs, butt, and abs. This move uses both legs at the same time, making it a great exercise for strong legs.",
+    "image": "https://media.giphy.com/media/l3q2Q3sUEkEyDvfPO/giphy.gif",
+    "categories": [
+        4,
+        5
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 26,
+  "fields": {
     "name": "Leg Raises",
     "description": "On the machine, raise your legs in a 90 degree angle",
     "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/fitgif9-29-tnoverride-1515519049.gif",
@@ -315,6 +328,127 @@
     ]
   }
 },
+{
+  "model": "gymapp.exercise",
+  "pk": 27,
+  "fields": {
+    "name": "Barbell Standing press",
+    "description": "This bodybuilder staple targets your shoulders, but also works your whole body. It's a great overall mass builder. These are really good for strengthening your core and increasing overall strength due to the stability aspect of this movement. Start with your hardest move to ensure you've got the core strength to maintain perfect form.",
+    "image": "https://thumbs.gfycat.com/MelodicUniformChanticleer-small.gif",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 28,
+  "fields": {
+    "name": "Lateral raise",
+    "description": "The slower you can perform these raises, the more they'll hurt 2013 and the better you're going to look. Lateral raises are perfect for isolating the medial part of the deltoid. They're more commonly used with a lighter weight and higher reps. You'll still be gritting your teeth by the end of the third set.",
+    "image": "https://blog.mikesulsenti.com/wp-content/uploads/2016/07/latraise.gif",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 29,
+  "fields": {
+    "name": "Plank",
+    "description": "The definitive core exercise. The plank involves minimal movement but maximal effort, requiring you to support your body on your forearms and toes while holding your body in a straight line from your shoulders to your ankles.",
+    "image": "https://media0.giphy.com/media/d3mlADRlF7SMFQRy/giphy.gif",
+    "categories": [
+      4
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 30,
+  "fields": {
+    "name": "Ball push away",
+    "description": "Get into a plank position with your feet spread and your forearms resting on a gym ball. Push the ball away with your forearms, then pull it back it, while maintaining the plank position.",
+    "image": "https://cdn.prod.openfit.com/uploads/2017/12/Stability-Ball-Rollout.gif",
+    "categories": [
+      4
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 31,
+  "fields": {
+    "name": "Dead Bug",
+    "description": "Lie on your back with your arms extended straight up towards the ceiling, and your legs raised with your knees bent at 90\u00b0. Lower your right arm and left leg at the same time until they are hovering just above the floor, then return to the starting position.",
+    "image": "https://i.pinimg.com/originals/68/a8/b3/68a8b3cea53d119c05c4dadef551e4fc.gif",
+    "categories": [
+      4
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 32,
+  "fields": {
+    "name": "Boat",
+    "description": "Sit on the floor with your knees bent. Lean back slightly, keeping your back straight, and hold your arms out in front of you as you raise your feet off the ground with your legs together.",
+    "image": "https://www.apollopharmacy.in/blog/wp-content/uploads/2017/09/Boat_Pose_Pic.gif",
+    "categories": [
+      4
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 33,
+  "fields": {
+    "name": "Push Ups",
+    "description": "Lay belly down on the floor, with your feet roughly 15-20 centimeters apart. Place your palms flat on the ground and slightly wider than shoulder-width apart,Keeping your body straight and long, come up onto your toes and lift your body off the floor with your arms until they are fully extended. Slowly bend your arms at the elbows and lower your chest towards the floor.",
+    "image": "https://thumbs.gfycat.com/GlossySkinnyDuckbillcat-small.gif",
+    "categories": [
+      3
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 34,
+  "fields": {
+    "name": "Biceps Curl",
+    "description": "Lie face down on the bench with your feet other side to keep you stable. Hang the dumbbells beneath you using a neutral grip and row the weights towards your chest.",
+    "image": "https://thumbs.gfycat.com/FelineSaltyBat-size_restricted.gif",
+    "categories": [
+      3
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 35,
+  "fields": {
+    "name": "Triceps Push ups",
+    "description": "Get into a push-up position with your arms straight but with knees on the floor and feet in the air. Hands should be under your chest and closer together than in a regular push-up,",
+    "image": "https://i2.wp.com/www.activenhealth.com/wp-content/uploads/2015/08/diamond.gif",
+    "categories": [
+      6
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 36,
+  "fields": {
+    "name": "Overhead Extension",
+    "description": "Stand with feet hip-width apart and knees slightly bent, gripping the dumbbell with both of your hands,Reach your arms overhead, holding the dumbbell vertically. Keep wrists straight. Bend your elbows, lowering the dumbbell behind your head. Keep your upper arms close to your head and elbows pointing toward the ceiling.",
+    "image": "https://www.verywellfit.com/thmb/WM6un0V-EtkGk_6aj8dfU8ls0_A=/1333x1000/smart/filters:no_upscale()/Verywell-42-3498282-TricepOverhead01-1645-5994a150b501e800102ee1c0-5bfefc844cedfd0026408712.gif",
+    "categories": [
+      3
+    ]
+  }
+},
+
 {
   "model": "gymapp.programme",
   "pk": 1,
