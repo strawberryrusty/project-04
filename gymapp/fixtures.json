@@ -76,31 +76,39 @@
 },
 {
   "model": "gymapp.exercise",
+<<<<<<< HEAD
   "pk": 22,
+=======
+  "pk": 3,
+>>>>>>> fix-gymapp
   "fields": {
     "name": "Squats",
     "description": "Squats are ideal if you have back problems. Since they\u2019re done while standing up and without extra weight, they won\u2019t strain the back.",
     "image": "https://media1.popsugar-assets.com/files/thumbor/iFJhm2cqTKjrLWYP-wJjq9Kc3ZQ/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/01/19/791/n/1922729/0fd3a596dea90b2b_EXAMPLE.squathops.gif",
     "categories": [
-      27
+      7
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 23,
+  "pk": 4,
   "fields": {
     "name": "Lunges",
     "description": "Lunges work your thighs, butt, and abs. This move uses both legs at the same time, making it a great exercise for strong legs.",
     "image": "https://media.giphy.com/media/l3q2Q3sUEkEyDvfPO/giphy.gif",
     "categories": [
-      27
+      7
     ]
   }
 },
 {
   "model": "gymapp.exercise",
+<<<<<<< HEAD
   "pk": 7,
+=======
+  "pk": 5,
+>>>>>>> fix-gymapp
   "fields": {
     "name": "Crunches",
     "description": "Lie on your back with your knees bent and feet flat on the floor, then curl up and forward so that your head, neck, and shoulder blades lift off the floor",
@@ -112,19 +120,19 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 25,
+  "pk": 6,
   "fields": {
     "name": "Step Ups",
     "description": "Step-ups are like one-legged squats. The repetitive movement will work your thighs, hips, and butt.",
     "image": "http://media.self.com/photos/57ebec7efc07bf4a790d32d0/master/pass/STEP_UP_KNEE_LIFT.gif",
     "categories": [
-      27
+      7
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 26,
+  "pk": 7,
   "fields": {
     "name": "Dumbbell Curls",
     "description": "Curl the dumbells from a 90 degree angle with your hand",
@@ -136,7 +144,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 31,
+  "pk": 8,
   "fields": {
     "name": "Dumbbell Flyes",
     "description": "Lie down on a flat bench with a dumbbell on each hand resting on top of your thighs, then using your thighs to help raise the dumbbells, lift the dumbbells one at a time so you can hold them in front of you at shoulder width",
@@ -148,7 +156,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 28,
+  "pk": 9,
   "fields": {
     "name": "Seated Chest Press",
     "description": "Perform a chest press on an incline bench, making sure to not keep arms hyperextended",
@@ -160,7 +168,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 29,
+  "pk": 10,
   "fields": {
     "name": "Pull Ups",
     "description": "Grab the handles of the pull-up station with your palms facing away from you, and pull upward, having legs a shoulders width apart",
@@ -172,7 +180,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 30,
+  "pk": 11,
   "fields": {
     "name": "Dumbbell Single Arm Row",
     "description": "Head to a flat bench and place your right hand against it under your shoulder, keeping your arm straight row the dumbbell upward",
@@ -184,7 +192,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 31,
+  "pk": 12,
   "fields": {
     "name": "Chest-Supported Dumbbell Row",
     "description": "Lie face down on the bench with your feet other side to keep you stable. Hang the dumbbells beneath you using a neutral grip and row the weights towards your chest.",
@@ -196,7 +204,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 32,
+  "pk": 13,
   "fields": {
     "name": "Inverted Row",
     "description": "Set up a bar in a rack at waist height. Grab it with a wider than shoulder-width overhand grip and hang underneath, and pull in an upward motion",
@@ -208,7 +216,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 33,
+  "pk": 14,
   "fields": {
     "name": "Cable Fly",
     "description": "Grab a handle with each hand, and stand in a staggered stance in the middle of the station. Your arms should be outstretched but slightly bent.",
@@ -220,7 +228,7 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 34,
+  "pk": 15,
   "fields": {
     "name": "Plyometric Push-Ups",
     "description": "Get into a pushup position, your hands just outside your chest, your feet shoulder-width apart, lower your chest to the floor and then press up explosively",
@@ -232,8 +240,57 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 35,
+  "pk": 16,
   "fields": {
+    "name": "Single-Arm Dumbbell Bench Press",
+    "description": "Lie with your back flat on a bench holding a dumbbell in your right hand. Press the dumbbell directly over your chest until your arm is straight. Slowly lower the dumbbell to the right side of your chest.",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/5050dumbbellpress-1457045032.gif?resize=768:*",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 17,
+  "fields": {
+    "name": "Incline Pushup",
+    "description": "Perform a standard push up on a incline bench",
+    "image": "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Incline-Push-Up.gif",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 18,
+  "fields": {
+    "name": "Decline Pushup",
+    "description": "Perform a standard push up on a bench with a decline",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/feetelevatedpushup-1457047025.gif",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 19,
+  "fields": {
+    "name": "Bulgarian Split Squats",
+    "description": "Lower all the way down into the Bulgarian split squat, come up half way, go back down again, and then come all the way up.",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/dumbbellbulgariangobletsplitsquat-1457046602.gif?crop=1xw:1xh;center,top&resize=768:*",
+    "categories": [
+      7
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 20,
+  "fields": {
+<<<<<<< HEAD
     "name": "Single-Arm Dumbbell Bench Press",
     "description": "Lie with your back flat on a bench holding a dumbbell in your right hand. Press the dumbbell directly over your chest until your arm is straight. Slowly lower the dumbbell to the right side of your chest.",
     "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/5050dumbbellpress-1457045032.gif?resize=768:*",
@@ -311,9 +368,41 @@
     "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/fitgif9-29-tnoverride-1515519049.gif",
     "categories": [
       7
+=======
+    "name": "Double kettlebell Squats",
+    "description": "Perform a Front-loaded squat with 2 dumbbells on either side of your arms",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/04/kettlebellfrontsquat-1492109134.gif?crop=1xw:1xh;center,top&resize=768:*&frame=1",
+    "categories": [
+      7
+>>>>>>> fix-gymapp
     ]
   }
 },
+{
+  "model": "gymapp.exercise",
+  "pk": 21,
+  "fields": {
+    "name": "Barbell Lunges",
+    "description": "Perform a lunging forward motion while squatting with a barbell",
+    "image": "http://assets.menshealth.co.uk/main/assets/lunge.gif?mtime=1447694503",
+    "categories": [
+      7
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 22,
+  "fields": {
+    "name": "Leg Raises",
+    "description": "On the machine, raise your legs in a 90 degree angle",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/fitgif9-29-tnoverride-1515519049.gif",
+    "categories": [
+      7
+    ]
+  }
+},
+
 {
   "model": "gymapp.programme",
   "pk": 1,
@@ -366,7 +455,11 @@
 },
 {
   "model": "gymapp.programme",
+<<<<<<< HEAD
   "pk": 11,
+=======
+  "pk": 6,
+>>>>>>> fix-gymapp
   "fields": {
     "name": "Blue Steel",
     "image": "1",
@@ -376,7 +469,11 @@
 },
 {
   "model": "gymapp.programme",
+<<<<<<< HEAD
   "pk": 12,
+=======
+  "pk": 7,
+>>>>>>> fix-gymapp
   "fields": {
     "name": "Big",
     "image": "https://simplygym.co.uk/wp-content/uploads/2016/11/21199506_1593736974024042_6480577617807340323_o-1500x1000.jpg",
@@ -386,6 +483,7 @@
 },
 {
   "model": "gymapp.programme",
+<<<<<<< HEAD
   "pk": 13,
   "fields": {
     "name": "Blue Steel",
@@ -408,6 +506,30 @@
   "model": "gymapp.programme",
   "pk": 15,
   "fields": {
+=======
+  "pk": 8,
+  "fields": {
+    "name": "Blue Steel",
+    "image": "https://cdn.shopify.com/s/files/1/0150/0232/products/Pearl_Valley_Extra_Sharp_White_Cheddar_large.jpg?v=1521490296",
+    "location": "New York",
+    "user": 3
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 9,
+  "fields": {
+    "name": "TEST",
+    "image": "https://image.shutterstock.com/image-photo/piece-cheese-isolated-260nw-224608219.jpg",
+    "location": "London",
+    "user": 3
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 10,
+  "fields": {
+>>>>>>> fix-gymapp
     "name": "Blue Steel 6",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "London",
@@ -416,6 +538,7 @@
 },
 {
   "model": "gymapp.programme",
+<<<<<<< HEAD
   "pk": 16,
   "fields": {
     "name": "noihuoj",
@@ -428,6 +551,20 @@
   "model": "gymapp.programme",
   "pk": 17,
   "fields": {
+=======
+  "pk": 11,
+  "fields": {
+    "name": "noihuoj",
+    "image": "https://image.shutterstock.com/image-photo/piece-cheese-isolated-260nw-224608219.jpg",
+    "location": "opip-jo",
+    "user": 3
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 12,
+  "fields": {
+>>>>>>> fix-gymapp
     "name": "Prashanth Mohan",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "New York",
