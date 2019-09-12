@@ -138,13 +138,13 @@ class ProgrammesShow extends React.Component {
                     <form id={item.id} onSubmit={this.handleNewPBSubmit}>
                       <div className="container">
                         <div className="field">
-                          <label className="label has-text-centered">New PB</label>
+                          <label className="label has-text-centered">New Personal Best (kgs)</label>
                           <input
                             className="input"
                             type="number"
                             name="weight"
                             min="0"
-                            placeholder="Input desired new Personal Best(kg)"
+                            placeholder="Input your latest Personal Best (kgs)"
                             onChange={this.handleChange}
                             value={this.state.formData.weight || ''}
                           />

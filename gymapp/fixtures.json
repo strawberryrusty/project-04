@@ -1,51 +1,77 @@
 [
 {
   "model": "gymapp.category",
-  "pk": 23,
+  "pk": 1,
   "fields": {
     "name": "Chest"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 24,
+  "pk": 2,
   "fields": {
     "name": "Shoulders"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 25,
+  "pk": 3,
   "fields": {
     "name": "Arms"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 26,
+  "pk": 4,
   "fields": {
     "name": "Core"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 27,
+  "pk": 5,
   "fields": {
     "name": "Legs"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 28,
+  "pk": 6,
   "fields": {
     "name": "Back"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 29,
+  "pk": 7,
   "fields": {
     "name": "Quads"
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 1,
+  "fields": {
+    "name": "Bench Press",
+    "description": "Lying back on a bench. Use a medium width grip, lift the bar from the rack and hold it straight over you with your arms locked and push your arms forward.",
+    "image": "https://thumbs.gfycat.com/TastyAcceptableArgentinehornedfrog-size_restricted.gif",
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 2,
+  "fields": {
+    "name": "Squats",
+    "description": "Stand with your feet hips width apart, engage your core and squat down to your lowest point like sitting on a chair",
+    "image": "https://thumbs.gfycat.com/AmbitiousBraveApisdorsatalaboriosa-size_restricted.gif",
+    "categories": [
+      4,
+      5
+    ]
   }
 },
 {
@@ -74,13 +100,13 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 24,
+  "pk": 7,
   "fields": {
-    "name": "Single-leg Deadlifts",
-    "description": "The single-leg deadlift will sculpt your butt, hips, and upper legs. For balance, place your hands on a wall or chair.",
-    "image": "https://thumbs.gfycat.com/MatureFabulousGarpike-size_restricted.gif",
+    "name": "Crunches",
+    "description": "Lie on your back with your knees bent and feet flat on the floor, then curl up and forward so that your head, neck, and shoulder blades lift off the floor",
+    "image": "https://media1.giphy.com/media/LuhqyQeQEL9EA/giphy.gif",
     "categories": [
-      27
+      4
     ]
   }
 },
@@ -100,11 +126,11 @@
   "model": "gymapp.exercise",
   "pk": 26,
   "fields": {
-    "name": "Barbell Standing press",
-    "description": "This bodybuilder staple targets your shoulders, but also works your whole body. It's a great overall mass builder. These are really good for strengthening your core and increasing overall strength due to the stability aspect of this movement. Start with your hardest move to ensure you've got the core strength to maintain perfect form.",
-    "image": "https://thumbs.gfycat.com/MelodicUniformChanticleer-small.gif",
+    "name": "Dumbbell Curls",
+    "description": "Curl the dumbells from a 90 degree angle with your hand",
+    "image": "https://thumbs.gfycat.com/FelineSaltyBat-size_restricted.gif",
     "categories": [
-      24
+      3
     ]
   }
 },
@@ -112,11 +138,11 @@
   "model": "gymapp.exercise",
   "pk": 31,
   "fields": {
-    "name": "Lateral raise",
-    "description": "The slower you can perform these raises, the more they'll hurt \u2013 and the better you're going to look. Lateral raises are perfect for isolating the medial part of the deltoid. They're more commonly used with a lighter weight and higher reps.\" You'll still be gritting your teeth by the end of the third set.",
-    "image": "https://blog.mikesulsenti.com/wp-content/uploads/2016/07/latraise.gif",
+    "name": "Dumbbell Flyes",
+    "description": "Lie down on a flat bench with a dumbbell on each hand resting on top of your thighs, then using your thighs to help raise the dumbbells, lift the dumbbells one at a time so you can hold them in front of you at shoulder width",
+    "image": "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/fly-dumbbell-incline.gif?resize=480:*",
     "categories": [
-      24
+      1
     ]
   }
 },
@@ -124,11 +150,11 @@
   "model": "gymapp.exercise",
   "pk": 28,
   "fields": {
-    "name": "Plank",
-    "description": "The definitive core exercise. The plank involves minimal movement but maximal effort, requiring you to support your body on your forearms and toes while holding your body in a straight line from your shoulders to your ankles.",
-    "image": "https://media0.giphy.com/media/d3mlADRlF7SMFQRy/giphy.gif",
+    "name": "Seated Chest Press",
+    "description": "Perform a chest press on an incline bench, making sure to not keep arms hyperextended",
+    "image": "https://finetixfitness.com/images/Exercise%20Library/Incline%20DB%20Bench%20Press.gif",
     "categories": [
-      26
+      1
     ]
   }
 },
@@ -136,11 +162,11 @@
   "model": "gymapp.exercise",
   "pk": 29,
   "fields": {
-    "name": "Ball push away",
-    "description": "Get into a plank position with your feet spread and your forearms resting on a gym ball. Push the ball away with your forearms, then pull it back it, while maintaining the plank position.",
-    "image": "https://cdn.prod.openfit.com/uploads/2017/12/Stability-Ball-Rollout.gif",
+    "name": "Pull Ups",
+    "description": "Grab the handles of the pull-up station with your palms facing away from you, and pull upward, having legs a shoulders width apart",
+    "image": "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/how-to-do-a-pull-up.gif?resize=980:*",
     "categories": [
-      26
+      6
     ]
   }
 },
@@ -148,11 +174,11 @@
   "model": "gymapp.exercise",
   "pk": 30,
   "fields": {
-    "name": "Dead Bug",
-    "description": "Lie on your back with your arms extended straight up towards the ceiling, and your legs raised with your knees bent at 90\u00b0. Lower your right arm and left leg at the same time until they are hovering just above the floor, then return to the starting position.",
-    "image": "https://i.pinimg.com/originals/68/a8/b3/68a8b3cea53d119c05c4dadef551e4fc.gif",
+    "name": "Dumbbell Single Arm Row",
+    "description": "Head to a flat bench and place your right hand against it under your shoulder, keeping your arm straight row the dumbbell upward",
+    "image": "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/dumbbell-single-arm-row.gif?resize=980:*",
     "categories": [
-      26
+      6
     ]
   }
 },
@@ -160,11 +186,11 @@
   "model": "gymapp.exercise",
   "pk": 31,
   "fields": {
-    "name": "Boat",
-    "description": "Sit on the floor with your knees bent. Lean back slightly, keeping your back straight, and hold your arms out in front of you as you raise your feet off the ground with your legs together.",
-    "image": "https://www.apollopharmacy.in/blog/wp-content/uploads/2017/09/Boat_Pose_Pic.gif",
+    "name": "Chest-Supported Dumbbell Row",
+    "description": "Lie face down on the bench with your feet other side to keep you stable. Hang the dumbbells beneath you using a neutral grip and row the weights towards your chest.",
+    "image": "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/dumbbell-row.gif?resize=768:*",
     "categories": [
-      26
+      6
     ]
   }
 },
@@ -172,11 +198,11 @@
   "model": "gymapp.exercise",
   "pk": 32,
   "fields": {
-    "name": "Push Ups",
-    "description": "Lay belly down on the floor, with your feet roughly 15-20 centimeters apart. Place your palms flat on the ground and slightly wider than shoulder-width apart,Keeping your body straight and long, come up onto your toes and lift your body off the floor with your arms until they are fully extended. Slowly bend your arms at the elbows and lower your chest towards the floor.",
-    "image": "https://thumbs.gfycat.com/GlossySkinnyDuckbillcat-small.gif",
+    "name": "Inverted Row",
+    "description": "Set up a bar in a rack at waist height. Grab it with a wider than shoulder-width overhand grip and hang underneath, and pull in an upward motion",
+    "image": "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/invertedrow.gif?resize=768:*",
     "categories": [
-      25
+      6
     ]
   }
 },
@@ -184,11 +210,11 @@
   "model": "gymapp.exercise",
   "pk": 33,
   "fields": {
-    "name": "Biceps Curl",
-    "description": "Lie face down on the bench with your feet other side to keep you stable. Hang the dumbbells beneath you using a neutral grip and row the weights towards your chest.",
-    "image": "https://thumbs.gfycat.com/FelineSaltyBat-size_restricted.gif",
+    "name": "Cable Fly",
+    "description": "Grab a handle with each hand, and stand in a staggered stance in the middle of the station. Your arms should be outstretched but slightly bent.",
+    "image": "https://program.rapidloss.com.au/wp-content/uploads/cable-chest-fly.gif",
     "categories": [
-      25
+      1
     ]
   }
 },
@@ -196,11 +222,11 @@
   "model": "gymapp.exercise",
   "pk": 34,
   "fields": {
-    "name": "Triceps Push ups",
-    "description": "Get into a push-up position with your arms straight but with knees on the floor and feet in the air. Hands should be under your chest and closer together than in a regular push-up,",
-    "image": "https://i2.wp.com/www.activenhealth.com/wp-content/uploads/2015/08/diamond.gif",
+    "name": "Plyometric Push-Ups",
+    "description": "Get into a pushup position, your hands just outside your chest, your feet shoulder-width apart, lower your chest to the floor and then press up explosively",
+    "image": "https://3vnqw32fta3x1ysij926ljs3-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/PlyoPushup.gif",
     "categories": [
-      28
+      1
     ]
   }
 },
@@ -208,73 +234,754 @@
   "model": "gymapp.exercise",
   "pk": 35,
   "fields": {
-    "name": "Overhead Extension",
-    "description": "Stand with feet hip-width apart and knees slightly bent, gripping the dumbbell with both of your hands,Reach your arms overhead, holding the dumbbell vertically. Keep wrists straight. Bend your elbows, lowering the dumbbell behind your head. Keep your upper arms close to your head and elbows pointing toward the ceiling.",
-    "image": "https://www.verywellfit.com/thmb/WM6un0V-EtkGk_6aj8dfU8ls0_A=/1333x1000/smart/filters:no_upscale()/Verywell-42-3498282-TricepOverhead01-1645-5994a150b501e800102ee1c0-5bfefc844cedfd0026408712.gif",
+    "name": "Single-Arm Dumbbell Bench Press",
+    "description": "Lie with your back flat on a bench holding a dumbbell in your right hand. Press the dumbbell directly over your chest until your arm is straight. Slowly lower the dumbbell to the right side of your chest.",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/5050dumbbellpress-1457045032.gif?resize=768:*",
     "categories": [
-      25
+      1
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 20,
+  "fields": {
+    "name": "Incline Pushup",
+    "description": "Perform a standard push up on a incline bench",
+    "image": "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Incline-Push-Up.gif",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 21,
+  "fields": {
+    "name": "Decline Pushup",
+    "description": "Perform a standard push up on a bench with a decline",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/feetelevatedpushup-1457047025.gif",
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 22,
+  "fields": {
+    "name": "Bulgarian Split Squats",
+    "description": "Lower all the way down into the Bulgarian split squat, come up half way, go back down again, and then come all the way up.",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/dumbbellbulgariangobletsplitsquat-1457046602.gif?crop=1xw:1xh;center,top&resize=768:*",
+    "categories": [
+      7
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 23,
+  "fields": {
+    "name": "Double kettlebell Squats",
+    "description": "Perform a Front-loaded squat with 2 dumbbells on either side of your arms",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/04/kettlebellfrontsquat-1492109134.gif?crop=1xw:1xh;center,top&resize=768:*&frame=1",
+    "categories": [
+      7
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 24,
+  "fields": {
+    "name": "Barbell Lunges",
+    "description": "Perform a lunging forward motion while squatting with a barbell",
+    "image": "http://assets.menshealth.co.uk/main/assets/lunge.gif?mtime=1447694503",
+    "categories": [
+      7
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 25,
+  "fields": {
+    "name": "Leg Raises",
+    "description": "On the machine, raise your legs in a 90 degree angle",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/fitgif9-29-tnoverride-1515519049.gif",
+    "categories": [
+      7
     ]
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 35,
+  "pk": 1,
   "fields": {
-    "name": "Muscle workout",
+    "name": "Summer",
+    "image": "1",
+    "location": "1",
+    "user": 1
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 2,
+  "fields": {
+    "name": "Winter",
+    "image": "1",
+    "location": "1",
+    "user": 1
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 3,
+  "fields": {
+    "name": "Weight Loss",
+    "image": "1",
+    "location": "1",
+    "user": 1
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 4,
+  "fields": {
+    "name": "Summer",
+    "image": "1",
+    "location": "1",
+    "user": 1
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 5,
+  "fields": {
+    "name": "Holiday Pump",
+    "image": "https://www.hughbaird.ac.uk/user/pages/22.facilities/09.lifestyle-fitness-gym/02._features/Facilities.jpg",
+    "location": "London",
+    "user": 3
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 11,
+  "fields": {
+    "name": "Blue Steel",
+    "image": "1",
+    "location": "1",
+    "user": 4
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 12,
+  "fields": {
+    "name": "Big",
+    "image": "https://simplygym.co.uk/wp-content/uploads/2016/11/21199506_1593736974024042_6480577617807340323_o-1500x1000.jpg",
+    "location": "1",
+    "user": 4
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 13,
+  "fields": {
+    "name": "Blue Steel",
+    "image": "https://cdn.shopify.com/s/files/1/0150/0232/products/Pearl_Valley_Extra_Sharp_White_Cheddar_large.jpg?v=1521490296",
+    "location": "New York",
+    "user": 3
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 14,
+  "fields": {
+    "name": "TEST",
+    "image": "https://image.shutterstock.com/image-photo/piece-cheese-isolated-260nw-224608219.jpg",
+    "location": "London",
+    "user": 3
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 15,
+  "fields": {
+    "name": "Blue Steel 6",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "London",
-    "user": 2
+    "user": 3
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 36,
+  "pk": 16,
   "fields": {
-    "name": "Summer Body",
-    "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Paris",
-    "user": 2
+    "name": "noihuoj",
+    "image": "https://image.shutterstock.com/image-photo/piece-cheese-isolated-260nw-224608219.jpg",
+    "location": "opip-jo",
+    "user": 3
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 37,
+  "pk": 17,
   "fields": {
-    "name": "Slim work out",
+    "name": "Prashanth Mohan",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Chicago",
-    "user": 2
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 38,
-  "fields": {
-    "name": "Stress workout",
-    "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Rio De Janeiro",
-    "user": 2
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 39,
-  "fields": {
-    "name": "Winter Workout",
-    "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Rio De Janeiro",
-    "user": 2
+    "location": "New York",
+    "user": 3
   }
 },
 {
   "model": "gymapp.item",
-  "pk": 17,
+  "pk": 2,
   "fields": {
     "day": "Monday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 35,
-    "exercise": 22
+    "sets": 5,
+    "reps": 10,
+    "programme": 1,
+    "exercise": 1
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 3,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 5,
+    "reps": 10,
+    "programme": 1,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 4,
+  "fields": {
+    "day": "Monday",
+    "sets": 4,
+    "reps": 4,
+    "programme": 5,
+    "exercise": 1
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 5,
+  "fields": {
+    "day": "Thursday",
+    "sets": 5,
+    "reps": 5,
+    "programme": 5,
+    "exercise": 4
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 6,
+  "fields": {
+    "day": "Monday",
+    "sets": 100,
+    "reps": 100,
+    "programme": 3,
+    "exercise": 7
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 20,
+  "fields": {
+    "day": "Thursday",
+    "sets": 67,
+    "reps": 68,
+    "programme": 11,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 21,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 555,
+    "reps": 67,
+    "programme": 11,
+    "exercise": 4
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 22,
+  "fields": {
+    "day": "Wednesday",
+    "sets": 67,
+    "reps": 67,
+    "programme": 12,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 23,
+  "fields": {
+    "day": "Monday",
+    "sets": 6,
+    "reps": 7,
+    "programme": 13,
+    "exercise": 4
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 24,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 66,
+    "reps": 66,
+    "programme": 14,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 25,
+  "fields": {
+    "day": "Monday",
+    "sets": 100,
+    "reps": 88,
+    "programme": 14,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 26,
+  "fields": {
+    "day": "Wednesday",
+    "sets": 6666,
+    "reps": 4444,
+    "programme": 5,
+    "exercise": 7
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 29,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 4,
+    "reps": 4,
+    "programme": 5,
+    "exercise": 1
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 30,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 4,
+    "reps": 4,
+    "programme": 5,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 31,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 100,
+    "reps": 5,
+    "programme": 5,
+    "exercise": 1
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 32,
+  "fields": {
+    "day": "Sunday",
+    "sets": 6,
+    "reps": 7,
+    "programme": 5,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 33,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 100,
+    "reps": 100,
+    "programme": 5,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 34,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 5,
+    "reps": 5,
+    "programme": 14,
+    "exercise": 1
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 35,
+  "fields": {
+    "day": "Sunday",
+    "sets": 69,
+    "reps": 69,
+    "programme": 14,
+    "exercise": 12
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 36,
+  "fields": {
+    "day": "Sunday",
+    "sets": 25,
+    "reps": 25,
+    "programme": 5,
+    "exercise": 4
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 37,
+  "fields": {
+    "day": "Sunday",
+    "sets": 455,
+    "reps": 55,
+    "programme": 5,
+    "exercise": 4
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 38,
+  "fields": {
+    "day": "Tuesday",
+    "sets": 56,
+    "reps": 56,
+    "programme": 13,
+    "exercise": 18
+  }
+},
+{
+  "model": "gymapp.item",
+  "pk": 39,
+  "fields": {
+    "day": "Monday",
+    "sets": 66,
+    "reps": 66,
+    "programme": 13,
+    "exercise": 2
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 1,
+  "fields": {
+    "date": "2019-09-10",
+    "weight": 50,
+    "item": 2
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 2,
+  "fields": {
+    "date": "2019-09-10",
+    "weight": 55,
+    "item": 2
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 3,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 55,
+    "item": 2
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 4,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 5,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 6,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 7,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 65,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 8,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 65,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 9,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 65,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 10,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 65,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 11,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 65,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 12,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 70,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 13,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 20,
+    "item": 26
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 14,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 75,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 15,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 56,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 16,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 19,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 56,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 20,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 777,
+    "item": 5
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 21,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 22,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 78,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 23,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 56,
+    "item": 29
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 24,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 56,
+    "item": 29
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 25,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 29
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 26,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 89,
+    "item": 29
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 27,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 25
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 28,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 56,
+    "item": 37
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 29,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 800,
+    "item": 37
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 30,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 78,
+    "item": 37
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 31,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 88,
+    "item": 37
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 32,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 67,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 33,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 78,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 34,
+  "fields": {
+    "date": "2019-09-11",
+    "weight": 8980,
+    "item": 4
+  }
+},
+{
+  "model": "gymapp.personalbest",
+  "pk": 35,
+  "fields": {
+    "date": "2019-09-12",
+    "weight": 56,
+    "item": 39
   }
 }
 ]
