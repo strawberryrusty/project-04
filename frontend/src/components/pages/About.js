@@ -8,7 +8,7 @@ const About = () => {
       <div className="container">
         <div className="box tableBorder">
 
-          <h2 className="title is-3 has-white-text">About the Site</h2>
+          <h2 className="title is-3 about-has-white-text">About the Site</h2>
           <p>This site has been developed by Ejike Chiboka and Prash Mohan as part of a learning module in General Assembly&lsquo;s Software Engineering Immersive Course using JavaScript and React. </p>
 
         </div>
@@ -42,15 +42,10 @@ const About = () => {
       <div className="box tableBorder">
         <h2>Acknowledgements</h2>
         <hr />
-        <ul>Background images - Unsplash artists:
-          <li>• Organic carrots - Harshal S. Hirve</li>
-          <li>• Plant box - Markus Spiske</li>
-          <li>• Tomatos, Onions & Potatos - Lars Blankers</li>
-          <li>• Market Greens - Lou Liebau</li>
-          <li>• Apples - Akshay Nanavati</li>
+        <ul>Exercise Information and Gifs provided by:
+          <li>• https://www.menshealth.com</li>
+          <li>• https://www.crossfit.com </li>
         </ul>
-        <p>Icons made by smalllikeart from www.flaticon.com</p>
-        <p>Smiling Carrot from www.vegetableislands.com</p>
       </div>
 
 

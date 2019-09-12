@@ -20,6 +20,8 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Footer from './components/pages/Footer'
 
+import '@fortawesome/fontawesome-free/js/all.js'
+
 import 'bulma'
 import './style.scss'
 
