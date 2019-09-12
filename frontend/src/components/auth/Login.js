@@ -47,7 +47,7 @@ class Login extends React.Component {
             </div>
             <div className="box tableBorder">
               <div className="field">
-                <label className="label">Email</label>
+                <label className="login label">Email</label>
                 <div className="control">
                   <input
                     className="input"
@@ -59,7 +59,7 @@ class Login extends React.Component {
                 </div>
               </div>
               <div className="field">
-                <label className="label">Password</label>
+                <label className="login label">Password</label>
                 <div className="control">
                   <input
                     className="input"

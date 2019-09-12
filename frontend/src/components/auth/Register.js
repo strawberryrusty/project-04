@@ -44,7 +44,7 @@ class Register extends React.Component {
           <div className="box tableBorder">
             <form onSubmit={this.handleSubmit}>
               <div className="field">
-                <label className="label">Username</label>
+                <label className="register label">Username</label>
                 <div className="control">
                   <input
                     className="input"
@@ -56,7 +56,7 @@ class Register extends React.Component {
                 {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
               </div>
               <div className="field">
-                <label className="label">Email</label>
+                <label className="register label">Email</label>
                 <div className="control">
                   <input
                     className="input"
@@ -69,7 +69,7 @@ class Register extends React.Component {
                 {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
               </div>
               <div className="field">
-                <label className="label">Password</label>
+                <label className="register label">Password</label>
                 <div className="control">
                   <input
                     className="input"
@@ -82,7 +82,7 @@ class Register extends React.Component {
                 {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
               </div>
               <div className="field">
-                <label className="label">Password Confirmation</label>
+                <label className="register label">Password Confirmation</label>
                 <div className="control">
                   <input
                     className="input"
