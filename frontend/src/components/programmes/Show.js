@@ -116,7 +116,7 @@ class ProgrammesShow extends React.Component {
 
                 {this.state.programme.items.map(item =>
 
-                  <div key={item.id} className="card">
+                  <div key={item.id} className="card blackOutline">
                     <div className="card-header">
                       <h2 className={`card-header-title title is-4 tag is-${item.day}`}> {item.day}</h2>
                     </div>
@@ -152,7 +152,7 @@ class ProgrammesShow extends React.Component {
                       </div>
                       <button className="button is-centered is-fullwidth is-rounded is-success" on>Submit</button>
                     </form>
-                    <hr/>
+                    <br/>
                   </div>
                 )}
               </div>
