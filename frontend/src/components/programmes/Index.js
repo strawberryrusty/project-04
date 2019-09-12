@@ -37,7 +37,7 @@ class ProgrammesIndex extends Component {
           <div className="">
 
             <div className="box tableBorder">
-              {this.state.programmes && !this.state.programmes.length && <h2 className="title is-2">Please go to Add Programme and create a Programme</h2>}
+              {this.state.programmes && !this.state.programmes.length && <h2 className="title is-2 index-has-white-text">Please go to Add Programme and create a Programme</h2>}
             </div>
 
             <div className="box tableBorder">
