@@ -1,403 +1,280 @@
 [
 {
   "model": "gymapp.category",
-  "pk": 9,
+  "pk": 23,
   "fields": {
-    "name": "Legs"
+    "name": "Chest"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 10,
+  "pk": 24,
   "fields": {
     "name": "Shoulders"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 11,
+  "pk": 25,
+  "fields": {
+    "name": "Arms"
+  }
+},
+{
+  "model": "gymapp.category",
+  "pk": 26,
   "fields": {
     "name": "Core"
   }
 },
 {
   "model": "gymapp.category",
-  "pk": 12,
+  "pk": 27,
   "fields": {
-    "name": "Arms"
+    "name": "Legs"
+  }
+},
+{
+  "model": "gymapp.category",
+  "pk": 28,
+  "fields": {
+    "name": "Back"
+  }
+},
+{
+  "model": "gymapp.category",
+  "pk": 29,
+  "fields": {
+    "name": "Quads"
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 6,
+  "pk": 22,
   "fields": {
     "name": "Squats",
     "description": "Squats are ideal if you have back problems. Since they\u2019re done while standing up and without extra weight, they won\u2019t strain the back.",
     "image": "https://media1.popsugar-assets.com/files/thumbor/iFJhm2cqTKjrLWYP-wJjq9Kc3ZQ/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/01/19/791/n/1922729/0fd3a596dea90b2b_EXAMPLE.squathops.gif",
     "categories": [
-      9
+      27
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 4,
+  "pk": 23,
   "fields": {
-    "name": "Barbell Shoulder press",
-    "description": "Stand with the barbell to your chest, and push in an upwards motion, hold for 2 seconds, and pull down back to your chest",
-    "image": "https://thumbs.gfycat.com/HoarseTornGavial-size_restricted.gif",
+    "name": "Lunges",
+    "description": "Lunges work your thighs, butt, and abs. This move uses both legs at the same time, making it a great exercise for strong legs.",
+    "image": "https://media.giphy.com/media/l3q2Q3sUEkEyDvfPO/giphy.gif",
     "categories": [
-      2
+      27
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 5,
-  "fields": {
-    "name": "Deadlift",
-    "description": "Lift a loaded barbell or bar off the ground to the level of the hips, torso perpendicular to the floor, before being placed back on the ground",
-    "image": "https://i.pinimg.com/originals/b1/dd/77/b1dd77ce7b25ab2526175b2a7a4143e0.gif",
-    "categories": [
-      4,
-      5
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 8,
+  "pk": 24,
   "fields": {
     "name": "Single-leg Deadlifts",
     "description": "The single-leg deadlift will sculpt your butt, hips, and upper legs. For balance, place your hands on a wall or chair.",
     "image": "https://thumbs.gfycat.com/MatureFabulousGarpike-size_restricted.gif",
     "categories": [
-      9
+      27
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 9,
+  "pk": 25,
   "fields": {
-    "name": "Kettlebell Swings",
-    "description": "It's a basic ballistic exercise used to train the posterior chain in a manner similar to broad jumping. It involves moving the bell in a pendulum motion from between the knees to anywhere between eye level to fully overhead",
-    "image": "https://i.pinimg.com/originals/77/87/89/778789f4361994739ce59b8e597d00e7.gif",
+    "name": "Step Ups",
+    "description": "Step-ups are like one-legged squats. The repetitive movement will work your thighs, hips, and butt.",
+    "image": "http://media.self.com/photos/57ebec7efc07bf4a790d32d0/master/pass/STEP_UP_KNEE_LIFT.gif",
     "categories": [
-      6
+      27
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 10,
+  "pk": 26,
   "fields": {
     "name": "Barbell Standing press",
-    "description": "This bodybuilder staple targets your shoulders but also works your whole body. It's a great overall mass builder. These are really good for strengthening your core and increasing overall strength due to the stability aspect of this movement. Start with your hardest move to ensure you've got the core strength to maintain perfect form.",
+    "description": "This bodybuilder staple targets your shoulders, but also works your whole body. It's a great overall mass builder. These are really good for strengthening your core and increasing overall strength due to the stability aspect of this movement. Start with your hardest move to ensure you've got the core strength to maintain perfect form.",
     "image": "https://thumbs.gfycat.com/MelodicUniformChanticleer-small.gif",
     "categories": [
-      10
+      24
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 11,
+  "pk": 31,
   "fields": {
     "name": "Lateral raise",
-    "description": "The slower you can perform these raises, the more they'll hurt \u2013 and the better you're going to look. Lateral raises are perfect for isolating the medial part of the deltoid. They're more commonly used with a lighter weight and higher reps.",
+    "description": "The slower you can perform these raises, the more they'll hurt \u2013 and the better you're going to look. Lateral raises are perfect for isolating the medial part of the deltoid. They're more commonly used with a lighter weight and higher reps.\" You'll still be gritting your teeth by the end of the third set.",
     "image": "https://blog.mikesulsenti.com/wp-content/uploads/2016/07/latraise.gif",
     "categories": [
-      10
+      24
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 12,
+  "pk": 28,
   "fields": {
     "name": "Plank",
     "description": "The definitive core exercise. The plank involves minimal movement but maximal effort, requiring you to support your body on your forearms and toes while holding your body in a straight line from your shoulders to your ankles.",
     "image": "https://media0.giphy.com/media/d3mlADRlF7SMFQRy/giphy.gif",
     "categories": [
-      11
+      26
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 13,
+  "pk": 29,
   "fields": {
     "name": "Ball push away",
     "description": "Get into a plank position with your feet spread and your forearms resting on a gym ball. Push the ball away with your forearms, then pull it back it, while maintaining the plank position.",
     "image": "https://cdn.prod.openfit.com/uploads/2017/12/Stability-Ball-Rollout.gif",
     "categories": [
-      11
+      26
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 14,
+  "pk": 30,
   "fields": {
     "name": "Dead Bug",
     "description": "Lie on your back with your arms extended straight up towards the ceiling, and your legs raised with your knees bent at 90\u00b0. Lower your right arm and left leg at the same time until they are hovering just above the floor, then return to the starting position.",
     "image": "https://i.pinimg.com/originals/68/a8/b3/68a8b3cea53d119c05c4dadef551e4fc.gif",
     "categories": [
-      11
+      26
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 15,
+  "pk": 31,
   "fields": {
     "name": "Boat",
     "description": "Sit on the floor with your knees bent. Lean back slightly, keeping your back straight, and hold your arms out in front of you as you raise your feet off the ground with your legs together.",
     "image": "https://www.apollopharmacy.in/blog/wp-content/uploads/2017/09/Boat_Pose_Pic.gif",
     "categories": [
-      11
+      26
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 16,
+  "pk": 32,
   "fields": {
     "name": "Push Ups",
     "description": "Lay belly down on the floor, with your feet roughly 15-20 centimeters apart. Place your palms flat on the ground and slightly wider than shoulder-width apart,Keeping your body straight and long, come up onto your toes and lift your body off the floor with your arms until they are fully extended. Slowly bend your arms at the elbows and lower your chest towards the floor.",
     "image": "https://thumbs.gfycat.com/GlossySkinnyDuckbillcat-small.gif",
     "categories": [
-      12
+      25
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 17,
+  "pk": 33,
   "fields": {
     "name": "Biceps Curl",
     "description": "Lie face down on the bench with your feet other side to keep you stable. Hang the dumbbells beneath you using a neutral grip and row the weights towards your chest.",
     "image": "https://thumbs.gfycat.com/FelineSaltyBat-size_restricted.gif",
     "categories": [
-      12
+      25
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 18,
+  "pk": 34,
   "fields": {
     "name": "Triceps Push ups",
-    "description": "Get into a push-up position with your arms straight but with knees on the floor and feet in the air. Hands should be under your chest and closer together than in a regular push-up.",
+    "description": "Get into a push-up position with your arms straight but with knees on the floor and feet in the air. Hands should be under your chest and closer together than in a regular push-up,",
     "image": "https://i2.wp.com/www.activenhealth.com/wp-content/uploads/2015/08/diamond.gif",
     "categories": [
-      12
+      28
     ]
   }
 },
 {
   "model": "gymapp.exercise",
-  "pk": 19,
+  "pk": 35,
   "fields": {
     "name": "Overhead Extension",
     "description": "Stand with feet hip-width apart and knees slightly bent, gripping the dumbbell with both of your hands,Reach your arms overhead, holding the dumbbell vertically. Keep wrists straight. Bend your elbows, lowering the dumbbell behind your head. Keep your upper arms close to your head and elbows pointing toward the ceiling.",
     "image": "https://www.verywellfit.com/thmb/WM6un0V-EtkGk_6aj8dfU8ls0_A=/1333x1000/smart/filters:no_upscale()/Verywell-42-3498282-TricepOverhead01-1645-5994a150b501e800102ee1c0-5bfefc844cedfd0026408712.gif",
     "categories": [
-      12
+      25
     ]
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 29,
+  "pk": 35,
+  "fields": {
+    "name": "Muscle workout",
+    "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
+    "location": "London",
+    "user": 2
+  }
+},
+{
+  "model": "gymapp.programme",
+  "pk": 36,
   "fields": {
     "name": "Summer Body",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "London",
-    "user": 1
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 30,
-  "fields": {
-    "name": "Winter Workout",
-    "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "Paris",
-    "user": 1
+    "user": 2
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 31,
-  "fields": {
-    "name": "30 Day Programme",
-    "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Rio De Janeiro",
-    "user": 1
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 32,
+  "pk": 37,
   "fields": {
     "name": "Slim work out",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "Chicago",
-    "user": 1
+    "user": 2
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 33,
+  "pk": 38,
   "fields": {
     "name": "Stress workout",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Chicago",
-    "user": 1
+    "location": "Rio De Janeiro",
+    "user": 2
   }
 },
 {
   "model": "gymapp.programme",
-  "pk": 34,
+  "pk": 39,
   "fields": {
-    "name": "Weight Loss",
+    "name": "Winter Workout",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
-    "location": "Lagos",
-    "user": 1
+    "location": "Rio De Janeiro",
+    "user": 2
   }
 },
 {
   "model": "gymapp.item",
-  "pk": 5,
-  "fields": {
-    "day": "Monday",
-    "sets": 3,
-    "reps": 4,
-    "programme": 29,
-    "exercise": 6
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 6,
-  "fields": {
-    "day": "Monday",
-    "sets": 3,
-    "reps": 5,
-    "programme": 29,
-    "exercise": 7
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 7,
+  "pk": 17,
   "fields": {
     "day": "Monday",
     "sets": 3,
     "reps": 44,
-    "programme": 29,
-    "exercise": 8
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 8,
-  "fields": {
-    "day": "Wednesday",
-    "sets": 3,
-    "reps": 33,
-    "programme": 29,
-    "exercise": 10
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 9,
-  "fields": {
-    "day": "Wednesday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 29,
-    "exercise": 11
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 10,
-  "fields": {
-    "day": "Wednesday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 29,
-    "exercise": 12
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 11,
-  "fields": {
-    "day": "Wednesday",
-    "sets": 3,
-    "reps": 5,
-    "programme": 29,
-    "exercise": 14
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 12,
-  "fields": {
-    "day": "Wednesday",
-    "sets": 3,
-    "reps": 5,
-    "programme": 29,
-    "exercise": 13
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 13,
-  "fields": {
-    "day": "Wednesday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 29,
-    "exercise": 15
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 14,
-  "fields": {
-    "day": "Saturday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 29,
-    "exercise": 16
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 15,
-  "fields": {
-    "day": "Saturday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 29,
-    "exercise": 18
-  }
-},
-{
-  "model": "gymapp.item",
-  "pk": 16,
-  "fields": {
-    "day": "Saturday",
-    "sets": 3,
-    "reps": 44,
-    "programme": 29,
-    "exercise": 19
+    "programme": 35,
+    "exercise": 22
   }
 }
 ]

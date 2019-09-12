@@ -40,46 +40,47 @@ class ProgrammesEdit extends React.Component {
     return (
       <section className="section programmes-edit-background">
         <div className="container">
+          <div className="box tableBorder">
+            <form onSubmit={this.handleSubmit}>
+              <div className="field">
+                <label className="label-edit">Name</label>
+                <input
+                  className="input"
+                  name="name"
+                  placeholder="eg: Winter workout"
+                  value={this.state.formData.name || ''}
+                  onChange={this.handleChange}
+                />
+                {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
+              </div>
+              <div className="field">
+                <label className="label-edit">Image</label>
+                <input
+                  className="input"
+                  name="image"
+                  type="string"
+                  placeholder="Enter URL here"
+                  value={this.state.formData.image || ''}
+                  onChange={this.handleChange}
+                />
 
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <label className="label">Name</label>
-              <input
-                className="input"
-                name="name"
-                placeholder="eg: Winter workout"
-                value={this.state.formData.name || ''}
-                onChange={this.handleChange}
-              />
-              {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
-            </div>
-            <div className="field">
-              <label className="label">Image</label>
-              <input
-                className="input"
-                name="image"
-                type="string"
-                placeholder="Enter URL here"
-                value={this.state.formData.image || ''}
-                onChange={this.handleChange}
-              />
+              </div>
+              <div className="field">
+                <label className="label-edit">Location</label>
+                <input
+                  className="input"
+                  type="string"
+                  name="location"
+                  placeholder="New York"
+                  value={this.state.formData.location || ''}
+                  onChange={this.handleChange}
+                />
 
+              </div>
+              <button className="button">Submit</button>
+            </form>
+            <div className="footer-spacing-edit">
             </div>
-            <div className="field">
-              <label className="label">Location</label>
-              <input
-                className="input"
-                type="string"
-                name="location"
-                placeholder="New York"
-                value={this.state.formData.location || ''}
-                onChange={this.handleChange}
-              />
-
-            </div>
-            <button className="button">Submit</button>
-          </form>
-          <div className="footer-spacing-edit">
           </div>
         </div>
       </section>
