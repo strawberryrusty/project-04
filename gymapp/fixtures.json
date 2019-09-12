@@ -76,11 +76,7 @@
 },
 {
   "model": "gymapp.exercise",
-<<<<<<< HEAD
-  "pk": 22,
-=======
   "pk": 3,
->>>>>>> fix-gymapp
   "fields": {
     "name": "Squats",
     "description": "Squats are ideal if you have back problems. Since they\u2019re done while standing up and without extra weight, they won\u2019t strain the back.",
@@ -104,11 +100,7 @@
 },
 {
   "model": "gymapp.exercise",
-<<<<<<< HEAD
-  "pk": 7,
-=======
   "pk": 5,
->>>>>>> fix-gymapp
   "fields": {
     "name": "Crunches",
     "description": "Lie on your back with your knees bent and feet flat on the floor, then curl up and forward so that your head, neck, and shoulder blades lift off the floor",
@@ -290,91 +282,11 @@
   "model": "gymapp.exercise",
   "pk": 20,
   "fields": {
-<<<<<<< HEAD
-    "name": "Single-Arm Dumbbell Bench Press",
-    "description": "Lie with your back flat on a bench holding a dumbbell in your right hand. Press the dumbbell directly over your chest until your arm is straight. Slowly lower the dumbbell to the right side of your chest.",
-    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/5050dumbbellpress-1457045032.gif?resize=768:*",
-    "categories": [
-      1
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 20,
-  "fields": {
-    "name": "Incline Pushup",
-    "description": "Perform a standard push up on a incline bench",
-    "image": "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Incline-Push-Up.gif",
-    "categories": [
-      1
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 21,
-  "fields": {
-    "name": "Decline Pushup",
-    "description": "Perform a standard push up on a bench with a decline",
-    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/feetelevatedpushup-1457047025.gif",
-    "categories": [
-      1
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 22,
-  "fields": {
-    "name": "Bulgarian Split Squats",
-    "description": "Lower all the way down into the Bulgarian split squat, come up half way, go back down again, and then come all the way up.",
-    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/dumbbellbulgariangobletsplitsquat-1457046602.gif?crop=1xw:1xh;center,top&resize=768:*",
-    "categories": [
-      7
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 23,
-  "fields": {
     "name": "Double kettlebell Squats",
     "description": "Perform a Front-loaded squat with 2 dumbbells on either side of your arms",
     "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/04/kettlebellfrontsquat-1492109134.gif?crop=1xw:1xh;center,top&resize=768:*&frame=1",
     "categories": [
       7
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 24,
-  "fields": {
-    "name": "Barbell Lunges",
-    "description": "Perform a lunging forward motion while squatting with a barbell",
-    "image": "http://assets.menshealth.co.uk/main/assets/lunge.gif?mtime=1447694503",
-    "categories": [
-      7
-    ]
-  }
-},
-{
-  "model": "gymapp.exercise",
-  "pk": 25,
-  "fields": {
-    "name": "Leg Raises",
-    "description": "On the machine, raise your legs in a 90 degree angle",
-    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/fitgif9-29-tnoverride-1515519049.gif",
-    "categories": [
-      7
-=======
-    "name": "Double kettlebell Squats",
-    "description": "Perform a Front-loaded squat with 2 dumbbells on either side of your arms",
-    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2017/04/kettlebellfrontsquat-1492109134.gif?crop=1xw:1xh;center,top&resize=768:*&frame=1",
-    "categories": [
-      7
->>>>>>> fix-gymapp
     ]
   }
 },
@@ -455,11 +367,7 @@
 },
 {
   "model": "gymapp.programme",
-<<<<<<< HEAD
-  "pk": 11,
-=======
   "pk": 6,
->>>>>>> fix-gymapp
   "fields": {
     "name": "Blue Steel",
     "image": "1",
@@ -469,11 +377,7 @@
 },
 {
   "model": "gymapp.programme",
-<<<<<<< HEAD
-  "pk": 12,
-=======
   "pk": 7,
->>>>>>> fix-gymapp
   "fields": {
     "name": "Big",
     "image": "https://simplygym.co.uk/wp-content/uploads/2016/11/21199506_1593736974024042_6480577617807340323_o-1500x1000.jpg",
@@ -483,30 +387,6 @@
 },
 {
   "model": "gymapp.programme",
-<<<<<<< HEAD
-  "pk": 13,
-  "fields": {
-    "name": "Blue Steel",
-    "image": "https://cdn.shopify.com/s/files/1/0150/0232/products/Pearl_Valley_Extra_Sharp_White_Cheddar_large.jpg?v=1521490296",
-    "location": "New York",
-    "user": 3
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 14,
-  "fields": {
-    "name": "TEST",
-    "image": "https://image.shutterstock.com/image-photo/piece-cheese-isolated-260nw-224608219.jpg",
-    "location": "London",
-    "user": 3
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 15,
-  "fields": {
-=======
   "pk": 8,
   "fields": {
     "name": "Blue Steel",
@@ -529,7 +409,6 @@
   "model": "gymapp.programme",
   "pk": 10,
   "fields": {
->>>>>>> fix-gymapp
     "name": "Blue Steel 6",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "London",
@@ -538,20 +417,6 @@
 },
 {
   "model": "gymapp.programme",
-<<<<<<< HEAD
-  "pk": 16,
-  "fields": {
-    "name": "noihuoj",
-    "image": "https://image.shutterstock.com/image-photo/piece-cheese-isolated-260nw-224608219.jpg",
-    "location": "opip-jo",
-    "user": 3
-  }
-},
-{
-  "model": "gymapp.programme",
-  "pk": 17,
-  "fields": {
-=======
   "pk": 11,
   "fields": {
     "name": "noihuoj",
@@ -564,7 +429,6 @@
   "model": "gymapp.programme",
   "pk": 12,
   "fields": {
->>>>>>> fix-gymapp
     "name": "Prashanth Mohan",
     "image": "https://www.chardandilminsternews.co.uk/resources/images/9833873.jpg?display=1&htype=0&type=responsive-gallery",
     "location": "New York",
