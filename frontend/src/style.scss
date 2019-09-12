@@ -100,7 +100,7 @@ body {
   overflow: hidden;
   height: 100%;
   box-shadow: 1px 1px 1px 1px #FFFFFF;
-  border: 1px solid #2F4F4F;
+  border: 1px solid transparent;
   width: 800px;
   border-radius: 15px;
 }
@@ -354,6 +354,9 @@ p.copyright{
   width: 100%;
   border-radius: 15px;
 }
+.blackOutline{
+    border: 1px solid #2F4F4F;
+}
 
 .exercisefilter {
   padding-bottom: 20px;
@@ -361,7 +364,7 @@ p.copyright{
 
 #programmesbuttons{
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .card.exercise-card {

@@ -59,7 +59,7 @@ class ExercisesIndex extends React.Component {
             {this.state.exercises && this.filterExercises().map(exercise =>
               <div className="column is-one-quarter-desktop" key={exercise.id}>
                 <Link to={`/exercises/${exercise.id}`}>
-                  <div className="card exercise-card">
+                  <div className="card exercise-card blackOutline">
                     <div className="card-header">
                       <h2 className="card-header-title">{exercise.name}</h2>
                     </div>

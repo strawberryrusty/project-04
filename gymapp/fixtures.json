@@ -41,13 +41,26 @@
 },
 {
   "model": "gymapp.exercise",
-  "pk": 7,
+  "pk": 4,
   "fields": {
-    "name": "Lunges",
-    "description": "Lunges work your thighs, butt, and abs. This move uses both legs at the same time, making it a great exercise for strong legs.",
-    "image": "https://media.giphy.com/media/l3q2Q3sUEkEyDvfPO/giphy.gif",
+    "name": "Barbell Shoulder press",
+    "description": "Stand with the barbell to your chest, and push in an upwards motion, hold for 2 seconds, and pull down back to your chest",
+    "image": "https://thumbs.gfycat.com/HoarseTornGavial-size_restricted.gif",
     "categories": [
-      9
+      2
+    ]
+  }
+},
+{
+  "model": "gymapp.exercise",
+  "pk": 5,
+  "fields": {
+    "name": "Deadlift",
+    "description": "Lift a loaded barbell or bar off the ground to the level of the hips, torso perpendicular to the floor, before being placed back on the ground",
+    "image": "https://i.pinimg.com/originals/b1/dd/77/b1dd77ce7b25ab2526175b2a7a4143e0.gif",
+    "categories": [
+      4,
+      5
     ]
   }
 },
@@ -67,11 +80,11 @@
   "model": "gymapp.exercise",
   "pk": 9,
   "fields": {
-    "name": "Step Ups",
-    "description": "Step-ups are like one-legged squats. The repetitive movement will work your thighs, hips, and butt.",
-    "image": "http://media.self.com/photos/57ebec7efc07bf4a790d32d0/master/pass/STEP_UP_KNEE_LIFT.gif",
+    "name": "Kettlebell Swings",
+    "description": "It's a basic ballistic exercise used to train the posterior chain in a manner similar to broad jumping. It involves moving the bell in a pendulum motion from between the knees to anywhere between eye level to fully overhead",
+    "image": "https://i.pinimg.com/originals/77/87/89/778789f4361994739ce59b8e597d00e7.gif",
     "categories": [
-      9
+      6
     ]
   }
 },
