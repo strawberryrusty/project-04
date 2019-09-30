@@ -1,8 +1,8 @@
 # project-04
 
 ## Collaborators
-Ejike Chiboka
 Prashanth Mohan
+Ejike Chiboka
 
 #  Project 4: A Python/Django + React App
 
