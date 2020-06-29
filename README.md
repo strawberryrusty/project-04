@@ -1,4 +1,4 @@
-#  Project 4: Gympro 
+#  Project 4: Gympro
 
 ## Collaborators
 Prashanth Mohan
@@ -37,7 +37,7 @@ It has been developed collaboratively for the duration of the project.
 * Git, GitHub
 
 ### Approach Taken
-This idea was proposed by Prash and We agreed on it quickly and drew up 5 data models on the whiteboard, one for programmes, one for Exercise, one for Category, one for Items and finally, one for personal best.  It was agreed that achieving all five would meet the brief and so we made those a requirement for our Minimal Viable Product (MVP). A chart to track personal best growth would be added later if time permitted.
+We agreed on the idea quickly and drew up 5 data models on the whiteboard, one for programmes, one for Exercise, one for Category, one for Items and finally, one for personal best.  It was agreed that achieving all five would meet the brief and so we made those a requirement for our Minimal Viable Product (MVP). A chart to track personal best growth would be added later if time permitted.
 Still on the whiteboard, we drew wireframes for a list of pages that we felt we needed for MVP.  Namely:
 * Registration
 * Login
